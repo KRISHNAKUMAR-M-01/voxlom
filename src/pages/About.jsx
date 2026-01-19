@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const StatItem = ({ target, label }) => {
@@ -37,133 +38,172 @@ const StatItem = ({ target, label }) => {
 };
 
 export default function About() {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Voxlom Innovative Solution",
+        "description": "Learn about Voxlom's mission, vision, and values. We are a technology-driven company focused on delivering innovative digital solutions.",
+        "url": "https://voxlom.com/about",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Voxlom Innovative Solution",
+            "foundingDate": "2016",
+            "description": "Technology-driven company focused on delivering modern digital experiences and scalable software solutions."
+        }
+    };
+
     return (
-        <main className="about-page">
-            {/* HERO */}
-            <section className="about-hero">
-                <div className="container">
-                    <motion.div
-                        className="about-hero-content"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="section-title">About Voxlom</h1>
-                        <p className="hero-subtitle">
-                            Driving innovation through technology, creativity, and smart solutions.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+        <>
+            <Helmet>
+                <title>About Us - Voxlom Innovative Solution | Our Mission & Vision</title>
+                <meta name="description" content="Discover Voxlom's journey, mission, and vision. We blend creativity with engineering to help businesses transform and succeed in the digital era with 8+ years of experience." />
+                <meta name="keywords" content="about voxlom, technology company, digital transformation, software solutions, innovation, mission, vision, values" />
+                <link rel="canonical" href="https://voxlom.com/about" />
 
-            {/* INTRO */}
-            <section className="about-section">
-                <div className="container about-grid">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="section-title-alt">Who We Are</h2>
-                        <p className="about-p">
-                            Voxlom Innovative Solution is a technology-driven company focused on
-                            delivering modern digital experiences, scalable software solutions,
-                            and cutting-edge innovation.
-                        </p>
-                        <p className="about-p">
-                            We blend creativity with engineering to help businesses grow,
-                            transform, and succeed in the digital era.
-                        </p>
-                    </motion.div>
+                {/* Open Graph */}
+                <meta property="og:title" content="About Voxlom - Our Mission & Vision" />
+                <meta property="og:description" content="Learn about Voxlom's mission to drive innovation and transform businesses through technology." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://voxlom.com/about" />
 
-                    <motion.div
-                        className="about-highlight"
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h3>Our Expertise</h3>
-                        <ul>
-                            <li>Web & Software Development</li>
-                            <li>UI / UX & Product Design</li>
-                            <li>3D & Interactive Experiences</li>
-                            <li>AI & Emerging Technologies</li>
-                        </ul>
-                    </motion.div>
-                </div>
-            </section>
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="About Voxlom - Our Mission & Vision" />
+                <meta name="twitter:description" content="Learn about Voxlom's mission to drive innovation and transform businesses through technology." />
 
-            {/* MISSION / VISION */}
-            <section className="about-section dark-alt">
-                <div className="container mission-grid">
-                    <motion.div
-                        className="mission-card"
-                        whileHover={{ y: -10 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h3>Our Mission</h3>
-                        <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We are committed to designing and delivering sustainable, future-ready solutions that address real-world challenges and create lasting impact. By embracing integrity, excellence, and empathy, we ensure every solution is purposeful, reliable, and scalable. We continuously adopt emerging technologies and best practices to deliver measurable value to our clients and stakeholders. Through collaboration and responsible innovation, we strive to contribute positively to society and build a smarter, more inclusive digital future.</p>
-                    </motion.div>
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            </Helmet>
 
-                    <motion.div
-                        className="mission-card featured"
-                        whileHover={{ y: -10 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                    >
-                        <h3>Our Vision</h3>
-                        <p>At Voxlom Innovative Solution, our vision is to be a trusted global leader in technology-driven innovation that creates meaningful and sustainable impact. We aspire to build intelligent solutions that simplify complexity, enable growth, and enhance lives. By fostering creativity, collaboration, and continuous learning, we aim to stay at the forefront of technological advancement. We envision a future where technology bridges gaps, empowers communities, and drives inclusive progress. Through responsible innovation, we strive to shape a smarter, more connected, and better world.</p>
-                    </motion.div>
+            <main className="about-page">
+                {/* HERO */}
+                <section className="about-hero">
+                    <div className="container">
+                        <motion.div
+                            className="about-hero-content"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h1 className="section-title">About Voxlom</h1>
+                            <p className="hero-subtitle">
+                                Driving innovation through technology, creativity, and smart solutions.
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
 
-                    <motion.div
-                        className="mission-card"
-                        whileHover={{ y: -10 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <h3>Our Values</h3>
-                        <ul className="values-list">
-                            <li>Innovation</li>
-                            <li>Integrity</li>
-                            <li>Quality</li>
-                            <li>Customer-Centric Excellence</li>
-                        </ul>
-                    </motion.div>
-                </div>
-            </section>
+                {/* INTRO */}
+                <section className="about-section">
+                    <div className="container about-grid">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h2 className="section-title-alt">Who We Are</h2>
+                            <p className="about-p">
+                                Voxlom Innovative Solution is a technology-driven company focused on
+                                delivering modern digital experiences, scalable software solutions,
+                                and cutting-edge innovation.
+                            </p>
+                            <p className="about-p">
+                                We blend creativity with engineering to help businesses grow,
+                                transform, and succeed in the digital era.
+                            </p>
+                        </motion.div>
 
-            {/* STATS */}
-            <section className="about-section">
-                <div className="container stats-grid">
-                    <StatItem target="160+" label="Projects Delivered" />
-                    <StatItem target="50+" label="Happy Clients" />
-                    <StatItem target="8+" label="Years Experience" />
-                </div>
-            </section>
+                        <motion.div
+                            className="about-highlight"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h3>Our Expertise</h3>
+                            <ul>
+                                <li>Web & Software Development</li>
+                                <li>UI / UX & Product Design</li>
+                                <li>3D & Interactive Experiences</li>
+                                <li>AI & Emerging Technologies</li>
+                            </ul>
+                        </motion.div>
+                    </div>
+                </section>
 
-            {/* CTA */}
-            <section className="about-cta">
-                <div className="container">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="cta-content"
-                    >
-                        <h2>Let’s Build Something Amazing</h2>
-                        <p>Partner with Voxlom to turn your ideas into reality.</p>
-                        <Link to="/contact" className="btn btn-primary">Contact Us</Link>
-                    </motion.div>
-                </div>
-            </section>
-        </main>
+                {/* MISSION / VISION */}
+                <section className="about-section dark-alt">
+                    <div className="container mission-grid">
+                        <motion.div
+                            className="mission-card"
+                            whileHover={{ y: -10 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3>Our Mission</h3>
+                            <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We are committed to designing and delivering sustainable, future-ready solutions that address real-world challenges and create lasting impact. By embracing integrity, excellence, and empathy, we ensure every solution is purposeful, reliable, and scalable. We continuously adopt emerging technologies and best practices to deliver measurable value to our clients and stakeholders. Through collaboration and responsible innovation, we strive to contribute positively to society and build a smarter, more inclusive digital future.</p>
+                        </motion.div>
+
+                        <motion.div
+                            className="mission-card featured"
+                            whileHover={{ y: -10 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                        >
+                            <h3>Our Vision</h3>
+                            <p>At Voxlom Innovative Solution, our vision is to be a trusted global leader in technology-driven innovation that creates meaningful and sustainable impact. We aspire to build intelligent solutions that simplify complexity, enable growth, and enhance lives. By fostering creativity, collaboration, and continuous learning, we aim to stay at the forefront of technological advancement. We envision a future where technology bridges gaps, empowers communities, and drives inclusive progress. Through responsible innovation, we strive to shape a smarter, more connected, and better world.</p>
+                        </motion.div>
+
+                        <motion.div
+                            className="mission-card"
+                            whileHover={{ y: -10 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <h3>Our Values</h3>
+                            <ul className="values-list">
+                                <li>Innovation</li>
+                                <li>Integrity</li>
+                                <li>Quality</li>
+                                <li>Customer-Centric Excellence</li>
+                            </ul>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* STATS */}
+                <section className="about-section">
+                    <div className="container stats-grid">
+                        <StatItem target="160+" label="Projects Delivered" />
+                        <StatItem target="50+" label="Happy Clients" />
+                        <StatItem target="8+" label="Years Experience" />
+                    </div>
+                </section>
+
+                {/* CTA */}
+                <section className="about-cta">
+                    <div className="container">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="cta-content"
+                        >
+                            <h2>Let’s Build Something Amazing</h2>
+                            <p>Partner with Voxlom to turn your ideas into reality.</p>
+                            <Link to="/contact" className="btn btn-primary">Contact Us</Link>
+                        </motion.div>
+                    </div>
+                </section>
+            </main>
+        </>
     );
 }

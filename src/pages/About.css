@@ -149,8 +149,8 @@
     font-size: 1.35rem;
     /* Larger text for the main mission card */
     line-height: 1.8;
-    color: var(--text-primary);
-    /* brighter text for better readability */
+    color: var(--text-secondary);
+    /* Match the lighter gray color of Vision */
 }
 
 .values-list {

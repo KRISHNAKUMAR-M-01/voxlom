@@ -14,7 +14,7 @@ const Footer = () => {
                             <img src={logo} alt="Voxlom Logo" className="logo-img" />
                             Voxlom Innovative Solution
                         </Link>
-                        <p className="footer-desc">Redefining the digital landscape through innovation, 3D experiences, and cutting-edge software solutions.</p>
+                        <p className="footer-desc">Redefining the digital landscape through innovation and cutting-edge software solutions.</p>
                         <div className="social-links">
                             <a href="https://www.facebook.com/people/Voxlom-Innovative/pfbid02V1LwWnthEtk17snLNyXAHSgUmtozCMC1DmFKMVog7j65YUsGJJqbiUSPTXYLBqrsl/?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={20} /></a>
                             <a href="https://www.twitter.com/voxlom" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20} /></a>
