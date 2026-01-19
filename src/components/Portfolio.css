@@ -1,5 +1,6 @@
 .portfolio {
-    background: var(--dark-secondary);
+    background: var(--dark-bg);
+    padding: 10rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -101,6 +102,31 @@
 
 .bento-item:hover .portfolio-image {
     transform: scale(1.05);
+}
+
+.bento-item:nth-child(1) .portfolio-image {
+    background: linear-gradient(135deg, #222, #444), url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80');
+    background-size: cover;
+}
+
+.bento-item:nth-child(2) .portfolio-image {
+    background: linear-gradient(135deg, #1e2a44, #3a506b);
+}
+
+.bento-item:nth-child(3) .portfolio-image {
+    background: linear-gradient(135deg, #2d1b4d, #5d3fd3);
+}
+
+.bento-item:nth-child(4) .portfolio-image {
+    background: linear-gradient(135deg, #1b4d2d, #3fd35d);
+}
+
+.bento-item:nth-child(5) .portfolio-image {
+    background: linear-gradient(135deg, #4d2d1b, #d35d3f);
+}
+
+.bento-item:nth-child(6) .portfolio-image {
+    background: linear-gradient(135deg, #1b3d4d, #3fa6d3);
 }
 
 .portfolio-overlay {

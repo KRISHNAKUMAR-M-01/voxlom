@@ -102,6 +102,24 @@ const Contact = () => {
                             <a href="mailto:careers@voxlom.com">careers@voxlom.com</a>
                         </div>
                     </div>
+
+                    <motion.div
+                        className="map-container"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                    >
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.7976043856484!2d77.5813131!3d8.3229004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0460665ef6af7d%3A0xdd92a7c6fe1c9c70!2sVoxlom%20Innovative%20Solution!5e0!3m2!1sen!2sin!4v1768806704304!5m2!1sen!2sin"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0, borderRadius: '24px' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Voxlom Location"
+                        ></iframe>
+                    </motion.div>
                 </div>
             </section>
         </div>

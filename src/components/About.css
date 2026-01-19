@@ -1,5 +1,6 @@
 .about {
     background: var(--dark-bg);
+    padding: 10rem 0;
 }
 
 .about-content {

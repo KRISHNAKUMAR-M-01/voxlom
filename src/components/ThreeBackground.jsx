@@ -198,7 +198,7 @@ const Scene = () => {
 
 const ThreeBackground = () => {
     return (
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
             <Canvas
                 camera={{ position: [0, 0, 8], fov: 75 }}
                 gl={{ alpha: true, antialias: true }}
