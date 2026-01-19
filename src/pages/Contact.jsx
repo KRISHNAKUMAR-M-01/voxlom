@@ -73,10 +73,14 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="info-item">
-                                <div className="info-icon"><Clock size={24} /></div>
+                                <div className="info-icon"><Phone size={24} /></div>
                                 <div>
-                                    <h4>Business Hours</h4>
-                                    <p>Monday — Friday<br />9:00 AM — 6:00 PM EST</p>
+                                    <h4>Inquiries</h4>
+                                    <p>
+                                        +91 04637-210268<br />
+                                        +91 9092421284<br />
+                                        +91 8939997569
+                                    </p>
                                 </div>
                             </div>
                         </motion.div>

@@ -20,10 +20,10 @@ const Navbar = () => {
 
     const closeMenu = () => setIsMenuOpen(false);
 
-    const isContactPage = location.pathname === '/contact';
+    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/about';
 
     return (
-        <nav className={`navbar ${isScrolled || isContactPage ? 'scrolled' : ''}`}>
+        <nav className={`navbar ${isScrolled || isSecondaryPage ? 'scrolled' : ''}`}>
             <div className="nav-container">
                 <Link to="/" className="logo" onClick={closeMenu}>
                     <img src={logo} alt="Voxlom Logo" className="logo-img" />
@@ -31,11 +31,11 @@ const Navbar = () => {
                 </Link>
 
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <li><a href="/#home" className="nav-link" onClick={closeMenu}>Home</a></li>
-                    <li><a href="/#about" className="nav-link" onClick={closeMenu}>About</a></li>
+                    <li><Link to="/" className="nav-link" onClick={closeMenu}>Home</Link></li>
+                    <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMenu}>About</Link></li>
                     <li><a href="/#services" className="nav-link" onClick={closeMenu}>Services</a></li>
                     <li><a href="/#portfolio" className="nav-link" onClick={closeMenu}>Portfolio</a></li>
-                    <li><Link to="/contact" className={`nav-link ${isContactPage ? 'active' : ''}`} onClick={closeMenu}>Contact</Link></li>
+                    <li><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={closeMenu}>Contact</Link></li>
                 </ul>
 
                 <button className={`nav-toggle ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle navigation">

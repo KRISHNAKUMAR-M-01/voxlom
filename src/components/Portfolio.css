@@ -109,11 +109,25 @@
     background-size: cover;
 }
 
-.bento-item:nth-child(2) .portfolio-image { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
-.bento-item:nth-child(3) .portfolio-image { background: linear-gradient(135deg, #4c1d95, #8b5cf6); }
-.bento-item:nth-child(4) .portfolio-image { background: linear-gradient(135deg, #1e40af, #60a5fa); }
-.bento-item:nth-child(5) .portfolio-image { background: linear-gradient(135deg, #5b21b6, #a78bfa); }
-.bento-item:nth-child(6) .portfolio-image { background: linear-gradient(135deg, #3730a3, #6366f1); }
+.bento-item:nth-child(2) .portfolio-image {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.bento-item:nth-child(3) .portfolio-image {
+    background: linear-gradient(135deg, #4c1d95, #8b5cf6);
+}
+
+.bento-item:nth-child(4) .portfolio-image {
+    background: linear-gradient(135deg, #1e40af, #60a5fa);
+}
+
+.bento-item:nth-child(5) .portfolio-image {
+    background: linear-gradient(135deg, #7c2d12, #f97316);
+}
+
+.bento-item:nth-child(6) .portfolio-image {
+    background: linear-gradient(135deg, #3730a3, #6366f1);
+}
 
 .portfolio-overlay {
     position: absolute;
