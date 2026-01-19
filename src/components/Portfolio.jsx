@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Portfolio.css';
+import arunaImg from '../assets/aruna_diagnostics.png';
+import bringtonImg from '../assets/brington.png';
+import sancoImg from '../assets/sanco_life_science.png';
+import quantumImg from '../assets/quantum_power.png';
 
 const projects = [
-    { id: 1, tag: "Featured", title: "Project Alpha", desc: "3D Interactive Experience", type: "large" },
-    { id: 2, tag: "Web", title: "Project Beta", desc: "Web Platform Design", type: "medium" },
-    { id: 3, tag: "Branding", title: "Project Gamma", desc: "Brand Identity", type: "tall" },
-    { id: 4, tag: "Mobile", title: "Project Delta", desc: "Mobile Experience", type: "wide" },
-    { id: 5, tag: "UI/UX", title: "Project Epsilon", desc: "UI/UX Design", type: "medium" },
-    { id: 6, tag: "E-commerce", title: "Project Zeta", desc: "E-commerce Solution", type: "wide" }
+    { id: 0, isIntro: true, title: "Our Portfolio", desc: "Showcasing our finest work in web and software development." },
+    { id: 1, tag: "Healthcare", title: "Aruna Diagnostics", desc: "Trusted Lab Equipment Suppliers", image: arunaImg, bgPosition: "left top", link: "https://www.arunadiagnosticslab.in/" },
+    { id: 2, tag: "Life Science", title: "Sanco Life Science", desc: "Ayurvedic Wisdom & Nature", image: sancoImg, bgPosition: "center top", link: "https://www.sancolife.com/" },
+    { id: 3, tag: "IT Solutions", title: "Brington", desc: "Empowering Client Growth", image: bringtonImg, link: "https://www.brington.in/about", bgPosition: "left top" },
+    { id: 4, tag: "Energy", title: "Quantum Power Systems", desc: "Powering Progress Since 2009", image: quantumImg, bgPosition: "center center", link: "https://www.quantumups.com/" }
 ];
 
 const Portfolio = () => {
@@ -28,19 +31,41 @@ const Portfolio = () => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            className={`bento-item bento-${project.type}`}
+                            className={`bento-item ${project.isIntro ? 'bento-intro' : ''}`}
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                         >
-                            <div className="portfolio-image"></div>
-                            <div className="portfolio-overlay">
-                                <span className="portfolio-tag">{project.tag}</span>
-                                <h3>{project.title}</h3>
-                                <p>{project.desc}</p>
-                                <div className="portfolio-link">View Project <span>→</span></div>
-                            </div>
+                            {project.isIntro ? (
+                                <div className="portfolio-intro-content">
+                                    <h3>{project.title}</h3>
+                                    <p>{project.desc}</p>
+                                    <div className="intro-decoration">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <>
+                                    <div
+                                        className="portfolio-image"
+                                        style={{
+                                            backgroundImage: `url(${project.image})`,
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: project.bgPosition || 'top center'
+                                        }}
+                                    ></div>
+                                    <div className="portfolio-overlay">
+                                        <span className="portfolio-tag">{project.tag}</span>
+                                        <h3>{project.title}</h3>
+                                        {project.link ? (
+                                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="portfolio-link">View Project <span>→</span></a>
+                                        ) : (
+                                            <div className="portfolio-link">View Project <span>→</span></div>
+                                        )}
+                                    </div>
+                                </>
+                            )}
                         </motion.div>
                     ))}
                 </div>

@@ -47,86 +47,164 @@
     transform: translate(-50%, -50%);
 }
 
+/* 5-Card Bento Layout */
 .portfolio-bento {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 240px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 350px 280px;
     gap: 1.5rem;
-    grid-auto-flow: dense;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
 .bento-item {
     position: relative;
-    border-radius: 24px;
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
-    background: rgba(10, 10, 15, 0.6);
-    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--dark-card);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .bento-item:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    /* Added inner glow */
+    border-color: rgba(255, 255, 255, 0.4);
+    z-index: 2;
 }
 
-.bento-large {
+/* Shine Effect */
+.bento-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 3;
+    transition: none;
+    mix-blend-mode: overlay;
+    /* Better blending */
+}
+
+.bento-item:hover::after {
+    left: 200%;
+    transition: left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Grid Spans --- */
+
+/* Top Row: 2 Items (50% / 50%) */
+.bento-item:nth-child(1) {
+    grid-column: span 3;
+    grid-row: 1;
+}
+
+.bento-item:nth-child(2) {
+    grid-column: span 3;
+    grid-row: 1;
+}
+
+/* Bottom Row: 3 Items (33% each) */
+.bento-item:nth-child(3),
+.bento-item:nth-child(4),
+.bento-item:nth-child(5) {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: 2;
 }
 
-.bento-medium {
-    grid-column: span 1;
-    grid-row: span 1;
+/* --- Intro Card Styling --- */
+.bento-intro {
+    background: linear-gradient(145deg, var(--dark-secondary), #1e293b);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    text-align: left;
 }
 
-.bento-tall {
-    grid-column: span 1;
-    grid-row: span 2;
+.portfolio-intro-content h3 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    font-weight: 800;
 }
 
-.bento-wide {
-    grid-column: span 2;
-    grid-row: span 1;
+.portfolio-intro-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 90%;
 }
 
+.intro-decoration {
+    display: flex;
+    gap: 10px;
+}
+
+.intro-decoration span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.intro-decoration span:nth-child(1) {
+    background: var(--primary-color);
+}
+
+.intro-decoration span:nth-child(2) {
+    background: var(--secondary-color);
+}
+
+.intro-decoration span:nth-child(3) {
+    background: var(--accent-color);
+}
+
+
+/* Empty State Styling */
+.bento-item.bento-empty {
+    background: repeating-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.05) 10px,
+            rgba(255, 255, 255, 0.05) 20px);
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.1);
+    cursor: default;
+}
+
+.bento-item.bento-empty:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+/* --- Standard Item Image & Overlay --- */
 .portfolio-image {
     width: 100%;
     height: 100%;
-    background: var(--gradient-2);
-    transition: var(--transition);
+    background-color: var(--dark-bg);
+    transition: transform 0.6s ease;
 }
 
 .bento-item:hover .portfolio-image {
     transform: scale(1.05);
-}
-
-.bento-item:nth-child(1) .portfolio-image {
-    background: linear-gradient(135deg, #222, #444), url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80');
-    background-size: cover;
-}
-
-.bento-item:nth-child(2) .portfolio-image {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-}
-
-.bento-item:nth-child(3) .portfolio-image {
-    background: linear-gradient(135deg, #4c1d95, #8b5cf6);
-}
-
-.bento-item:nth-child(4) .portfolio-image {
-    background: linear-gradient(135deg, #1e40af, #60a5fa);
-}
-
-.bento-item:nth-child(5) .portfolio-image {
-    background: linear-gradient(135deg, #7c2d12, #f97316);
-}
-
-.bento-item:nth-child(6) .portfolio-image {
-    background: linear-gradient(135deg, #3730a3, #6366f1);
 }
 
 .portfolio-overlay {
@@ -134,61 +212,92 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to top, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.5) 80%, transparent);
     z-index: 2;
+    transition: var(--transition);
+}
+
+.bento-item:hover .portfolio-overlay {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .portfolio-tag {
     font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
     display: block;
 }
 
 .portfolio-overlay h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    line-height: 1.3;
     margin-bottom: 0.5rem;
 }
 
 .portfolio-overlay p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .portfolio-link {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-weight: 600;
-    color: var(--text-primary);
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: var(--transition);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-decoration: none;
 }
 
 .bento-item:hover .portfolio-link {
     opacity: 1;
-    transform: translateX(0);
 }
 
+
+/* --- Responsive --- */
 @media (max-width: 1024px) {
     .portfolio-bento {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 200px;
+        /* 2 Columns */
+        grid-template-rows: auto;
+    }
+
+    .bento-item:nth-child(1),
+    .bento-item:nth-child(2) {
+        grid-column: span 2;
+        /* Full width on tablet */
+        height: 300px;
+    }
+
+    .bento-item:nth-child(3),
+    .bento-item:nth-child(4),
+    .bento-item:nth-child(5) {
+        grid-column: span 1;
+        /* Half width */
+        height: 250px;
+    }
+
+    /* Make 5th item full width to balance grid if odd number */
+    .bento-item:nth-child(5) {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 640px) {
     .portfolio-bento {
         grid-template-columns: 1fr;
-        grid-auto-rows: 250px;
     }
 
-    .bento-large,
-    .bento-tall,
-    .bento-wide {
-        grid-column: span 1;
-        grid-row: span 1;
+    .bento-item {
+        grid-column: span 1 !important;
+        height: 280px !important;
     }
 }

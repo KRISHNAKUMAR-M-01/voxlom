@@ -76,37 +76,110 @@
 
 .mission-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    min-height: 550px;
 }
 
 .mission-card {
     background: var(--dark-card);
-    padding: 3rem 2rem;
-    border-radius: 24px;
+    padding: 2.5rem;
+    border-radius: 32px;
     border: 1px solid var(--border-color);
-    text-align: center;
+    text-align: left;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.mission-card.featured {
-    border-color: var(--primary-color);
-    background: rgba(251, 146, 60, 0.02);
+/* Mission - Tall Left Card */
+.mission-card:nth-child(1) {
+    grid-row: 1 /span 2;
+    background: linear-gradient(160deg, var(--dark-card) 0%, rgba(251, 146, 60, 0.05) 100%);
+}
+
+/* Vision - Top Right Wide Card */
+.mission-card:nth-child(2) {
+    background: linear-gradient(135deg, rgba(163, 230, 53, 0.05) 0%, var(--dark-card) 100%);
+}
+
+/* Values - Bottom Right Wide Card */
+.mission-card:nth-child(3) {
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.05) 0%, var(--dark-card) 100%);
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .mission-card h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.mission-card:nth-child(1) h3 {
+    color: var(--primary-color);
+}
+
+.mission-card:nth-child(2) h3 {
+    color: var(--secondary-color);
+}
+
+.mission-card:nth-child(3) h3 {
+    color: var(--accent-color);
 }
 
 .mission-card p {
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.mission-card:nth-child(1) p {
+    font-size: 1.35rem;
+    /* Larger text for the main mission card */
+    line-height: 1.8;
+    color: var(--text-primary);
+    /* brighter text for better readability */
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.values-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    line-height: 1.4rem;
+    /* Optical alignment with text */
+    flex-shrink: 0;
+    /* Prevent bullet from squishing */
 }
 
 .stats-grid {

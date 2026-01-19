@@ -106,7 +106,7 @@ export default function About() {
                         viewport={{ once: true }}
                     >
                         <h3>Our Mission</h3>
-                        <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We're dedicated to creating sustainable solutions that address real-world challenges and make a lasting impact.</p>
+                        <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We are committed to designing and delivering sustainable, future-ready solutions that address real-world challenges and create lasting impact. By embracing integrity, excellence, and empathy, we ensure every solution is purposeful, reliable, and scalable. We continuously adopt emerging technologies and best practices to deliver measurable value to our clients and stakeholders. Through collaboration and responsible innovation, we strive to contribute positively to society and build a smarter, more inclusive digital future.</p>
                     </motion.div>
 
                     <motion.div
@@ -118,7 +118,7 @@ export default function About() {
                         transition={{ delay: 0.1 }}
                     >
                         <h3>Our Vision</h3>
-                        <p>To lead with innovation and purpose, transforming ideas into intelligent solutions that create a better, smarter, and more connected world.</p>
+                        <p>At Voxlom Innovative Solution, our vision is to be a trusted global leader in technology-driven innovation that creates meaningful and sustainable impact. We aspire to build intelligent solutions that simplify complexity, enable growth, and enhance lives. By fostering creativity, collaboration, and continuous learning, we aim to stay at the forefront of technological advancement. We envision a future where technology bridges gaps, empowers communities, and drives inclusive progress. Through responsible innovation, we strive to shape a smarter, more connected, and better world.</p>
                     </motion.div>
 
                     <motion.div
@@ -130,7 +130,12 @@ export default function About() {
                         transition={{ delay: 0.2 }}
                     >
                         <h3>Our Values</h3>
-                        <p>Innovation, Integrity, Quality, and Customer-Centric Excellence.</p>
+                        <ul className="values-list">
+                            <li>Innovation</li>
+                            <li>Integrity</li>
+                            <li>Quality</li>
+                            <li>Customer-Centric Excellence</li>
+                        </ul>
                     </motion.div>
                 </div>
             </section>

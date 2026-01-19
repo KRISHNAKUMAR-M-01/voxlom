@@ -27,7 +27,10 @@ const Navbar = () => {
             <div className="nav-container">
                 <Link to="/" className="logo" onClick={closeMenu}>
                     <img src={logo} alt="Voxlom Logo" className="logo-img" />
-                    Voxlom Innovative Solution
+                    <div className="logo-text">
+                        <span className="logo-title">voxlom</span>
+                        <span className="logo-subtitle">innovative solutions</span>
+                    </div>
                 </Link>
 
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
