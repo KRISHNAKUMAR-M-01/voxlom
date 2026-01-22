@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const closeMenu = () => setIsMenuOpen(false);
 
-    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services';
+    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services' || location.pathname.startsWith('/careers');
 
     return (
         <nav className={`navbar ${isScrolled || isSecondaryPage ? 'scrolled' : ''}`}>
@@ -38,6 +38,7 @@ const Navbar = () => {
                     <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMenu}>About</Link></li>
                     <li><Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`} onClick={closeMenu}>Services</Link></li>
                     <li><a href="/#portfolio" className="nav-link" onClick={closeMenu}>Portfolio</a></li>
+                    <li><Link to="/careers" className={`nav-link ${location.pathname.startsWith('/careers') ? 'active' : ''}`} onClick={closeMenu}>Careers</Link></li>
                     <li><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={closeMenu}>Contact</Link></li>
                 </ul>
 

@@ -1,28 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Laptop, Sparkles, Rocket } from 'lucide-react';
+import { AIIcon, CloudIcon, CodeIcon, ConsultingIcon } from './ServiceIcons';
 import './Services.css';
 
 const services = [
     {
-        icon: <Palette size={40} />,
-        title: "3D Design",
-        desc: "Stunning 3D models and animations that bring your vision to life"
+        icon: <AIIcon />,
+        title: "Artificial Intelligence & ML",
+        desc: "Automate workflows and gain predictive insights with our custom AI/ML solutions."
     },
     {
-        icon: <Laptop size={40} />,
-        title: "Web Development",
-        desc: "Modern, responsive websites with cutting-edge technology"
+        icon: <CodeIcon />,
+        title: "Product & Software Engineering",
+        desc: "Build scalable, secure, and high-performance software tailored to your business needs."
     },
     {
-        icon: <Sparkles size={40} />,
-        title: "Interactive Experiences",
-        desc: "Engaging user interfaces with smooth animations"
+        icon: <CloudIcon />,
+        title: "Cloud & Data Engineering",
+        desc: "Modernize your infrastructure with secure cloud architectures and robust data pipelines."
     },
     {
-        icon: <Rocket size={40} />,
-        title: "Branding",
-        desc: "Complete brand identity and visual design solutions"
+        icon: <ConsultingIcon />,
+        title: "IT & Business Consulting",
+        desc: "Align technology with business goals through strategic consulting and digital transformation."
     }
 ];
 
@@ -31,8 +31,10 @@ const Services = () => {
         <section id="services" className="services">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title">Our Services</h2>
-                    <p className="section-subtitle">What we offer</p>
+                    <h2 className="section-title">What We Offer</h2>
+                    <p className="section-subtitle">
+                        Comprehensive technology solutions designed to accelerate your digital transformation.
+                    </p>
                 </div>
                 <div className="services-grid">
                     {services.map((service, index) => (

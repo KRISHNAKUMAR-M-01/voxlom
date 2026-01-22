@@ -1,0 +1,204 @@
+/* =====================
+   CAREERS PAGE
+===================== */
+
+/* SECTION WRAPPER */
+.careers-section {
+    padding: 8rem 0;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* INTRO */
+.careers-section h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.careers-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* =====================
+   WHY WORK WITH US
+===================== */
+
+.why-work {
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.why-work h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.why-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* SHARED CARD STYLES (MATCHING SERVICES) */
+.why-card,
+.job-card {
+    background: var(--dark-card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.why-card::before,
+.job-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, var(--primary-glow), transparent 40%);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.why-card:hover,
+.job-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(251, 146, 60, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.why-card:hover::before,
+.job-card:hover::before {
+    opacity: 0.1;
+}
+
+.why-card h3,
+.job-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    z-index: 1;
+}
+
+.why-card p,
+.job-desc,
+.job-meta {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    z-index: 1;
+}
+
+.why-card p {
+    margin-bottom: 0;
+}
+
+/* =====================
+   OPEN POSITIONS SPECIFIC
+===================== */
+
+.open-positions-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    margin: 6rem 0 3rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.job-desc {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.job-meta {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+/* APPLY BUTTON */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    border-radius: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    z-index: 1;
+    width: fit-content;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .careers-section {
+        padding: 5rem 0;
+    }
+
+    .careers-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .why-work h2,
+    .open-positions-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+}

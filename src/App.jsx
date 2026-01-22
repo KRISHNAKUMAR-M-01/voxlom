@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Services from './pages/Services';
+import Careers from './pages/Careers';
+import JobDetails from './pages/JobDetails';
 import NotFound from './pages/NotFound';
 import './App.css';
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<JobDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
