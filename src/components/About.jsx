@@ -55,7 +55,7 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                     >
-                        Crafting exceptional digital experiences
+                        Driving innovation through technology and expertise
                     </motion.p>
                 </div>
                 <div className="about-content">
@@ -65,12 +65,9 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h3>Innovation Meets Design</h3>
-                        <p>We are a creative studio specializing in 3D design, interactive experiences, and modern web
-                            solutions. Our team combines technical expertise with artistic vision to create stunning digital
-                            experiences.</p>
-                        <p>With a passion for pushing boundaries, we transform ideas into immersive visual stories that
-                            captivate and engage audiences worldwide.</p>
+                        <h3>Empowering Business Transformation</h3>
+                        <p>Voxlom Innovative Solution is a forward-thinking technology partner dedicated to delivering scalable software, AI-driven insights, and widely accessible digital platforms. We blend engineering excellence with strategic innovation to help enterprises navigate the complexities of the digital era.</p>
+                        <p>From cloud-native architectures to intelligent automation, we transform ambitious ideas into robust, high-performance realities that drive sustainable growth and operational efficiency.</p>
                     </motion.div>
                     <div className="about-stats">
                         <StatItem target="160" label="Projects" />

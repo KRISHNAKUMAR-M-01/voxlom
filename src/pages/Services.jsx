@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ServiceCard from "../components/ServiceCard";
@@ -201,16 +202,36 @@ const Services = () => {
                 {/* SERVICES SECTION */}
                 <section className="services-section" aria-labelledby="services-heading">
                     <header className="services-header">
-                        <h1 id="services-heading">What We Offer at Voxlom</h1>
-                        <p className="services-intro">
+                        <motion.h1
+                            id="services-heading"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            What We Offer at Voxlom
+                        </motion.h1>
+                        <motion.p
+                            className="services-intro"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
                             From AI & Machine Learning to Cloud Engineering, Software Development, Cybersecurity, and IT Consulting,
                             we deliver innovative technology solutions that empower businesses to transform, grow, and succeed in the digital era.
-                        </p>
+                        </motion.p>
                     </header>
 
                     <div className="services-grid" role="list">
                         {services.map((service, index) => (
-                            <article key={index} id={service.id} role="listitem">
+                            <motion.article
+                                key={index}
+                                id={service.id}
+                                role="listitem"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
                                 <ServiceCard
                                     {...service}
                                     open={expandedId === service.id}
@@ -218,7 +239,7 @@ const Services = () => {
                                         setExpandedId((prev) => (prev === service.id ? null : service.id))
                                     }
                                 />
-                            </article>
+                            </motion.article>
                         ))}
                     </div>
                 </section>
@@ -226,35 +247,54 @@ const Services = () => {
                 {/* INDUSTRIES SECTION */}
                 <section className="industries-section" aria-labelledby="industries-heading">
                     <header className="industry-header">
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
                             <p className="small-title">Industries We Serve</p>
                             <h2 id="industries-heading">Trusted Across Multiple Sectors</h2>
                             <p className="industry-description">
                                 We bring deep industry expertise and tailored solutions to organizations across diverse sectors,
                                 helping them navigate digital transformation and achieve operational excellence.
                             </p>
-                        </div>
+                        </motion.div>
                     </header>
 
                     <div className="industry-grid" role="list">
                         {industries.map((industry, index) => (
-                            <article key={index} role="listitem" aria-label={`${industry.title} industry`}>
+                            <motion.article
+                                key={index}
+                                role="listitem"
+                                aria-label={`${industry.title} industry`}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                            >
                                 <IndustryCard {...industry} />
-                            </article>
+                            </motion.article>
                         ))}
                     </div>
                 </section>
 
                 {/* CTA SECTION */}
                 <section className="services-cta">
-                    <div className="cta-content">
+                    <motion.div
+                        className="cta-content"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
                         <h2>Ready to Transform Your Business?</h2>
                         <p>
                             Partner with Voxlom to leverage cutting-edge technology solutions tailored to your unique needs.
                             Let's discuss how we can help you achieve your digital transformation goals.
                         </p>
                         <a href="/contact" className="btn btn-primary">Get Started Today</a>
-                    </div>
+                    </motion.div>
                 </section>
             </main>
 
