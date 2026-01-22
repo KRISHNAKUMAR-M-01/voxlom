@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const closeMenu = () => setIsMenuOpen(false);
 
-    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/about' || location.pathname === '/services';
+    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services';
 
     return (
         <nav className={`navbar ${isScrolled || isSecondaryPage ? 'scrolled' : ''}`}>

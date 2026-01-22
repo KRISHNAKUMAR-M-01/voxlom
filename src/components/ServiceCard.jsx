@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { ArrowRight, ChevronUp } from "lucide-react";
 
-const ServiceCard = ({ icon, title, shortText, fullText }) => {
-    const [open, setOpen] = useState(false);
-
+const ServiceCard = ({ icon, title, shortText, fullText, open = false, onToggle }) => {
     return (
-        <div className="service-box">
+        <div className={`service-box${open ? " is-expanded" : ""}`} aria-expanded={open}>
             <div className="service-icon">{icon}</div>
 
             <h3>{title}</h3>
@@ -14,10 +12,10 @@ const ServiceCard = ({ icon, title, shortText, fullText }) => {
                 {open ? fullText : shortText}
             </p>
 
-            <button onClick={() => setOpen(!open)}>
+            <button type="button" onClick={onToggle} aria-label={open ? "Read less" : "Read more"}>
                 {open ? (
                     <>
-                        Show less <ChevronUp size={16} />
+                        Read less <ChevronUp size={16} />
                     </>
                 ) : (
                     <>

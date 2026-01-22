@@ -5,6 +5,27 @@
     min-height: 100vh;
 }
 
+/* Prevent scroll when modal is open */
+body.services-modal-open {
+    overflow: hidden;
+}
+
+/* Overlay when a service card is expanded */
+.services-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 1100; /* above navbar (1000/1001) */
+    opacity: 0;
+    animation: servicesOverlayIn 160ms ease-out forwards;
+}
+
+@keyframes servicesOverlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Services Header */
 .services-header {
     max-width: 1400px;
@@ -123,6 +144,50 @@
     height: 100%;
 }
 
+/* Expanded (popup) state */
+.services-page .service-box.is-expanded {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(800px, calc(100vw - 2rem));
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1110; /* above overlay */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    border-color: rgba(251, 146, 60, 0.35);
+    opacity: 0;
+    animation: servicesCardPopIn 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    /* Allow card to grow with content */
+    height: auto;
+    min-height: auto;
+}
+
+@keyframes servicesCardPopIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.services-page .service-box.is-expanded:hover {
+    transform: translate(-50%, -50%);
+}
+
+/* Ensure expanded card content doesn't get cut off */
+.services-page .service-box.is-expanded .service-icon {
+    flex-shrink: 0;
+}
+
+.services-page .service-box.is-expanded h3 {
+    flex-shrink: 0;
+}
+
+.services-page .service-box.is-expanded button {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
 .services-page .service-box::before {
     content: '';
     position: absolute;
@@ -188,6 +253,16 @@
     margin-bottom: 2rem;
     flex-grow: 1;
     z-index: 1;
+    /* Allow text to wrap naturally */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Expanded card paragraph - more spacing for readability */
+.services-page .service-box.is-expanded p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .services-page .service-box button {
@@ -334,6 +409,14 @@
 
     .services-page .industry-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Expanded card on mobile - full width with padding */
+    .services-page .service-box.is-expanded {
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+        max-height: 85vh;
+        padding: 1.5rem;
     }
 }
 

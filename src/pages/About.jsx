@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import AboutThreeBackground from '../components/AboutThreeBackground';
 import './About.css';
 
 const StatItem = ({ target, label }) => {
@@ -80,6 +81,9 @@ export default function About() {
             <main className="about-page">
                 {/* HERO */}
                 <section className="about-hero">
+                    <div className="about-hero-bg">
+                        <AboutThreeBackground />
+                    </div>
                     <div className="container">
                         <motion.div
                             className="about-hero-content"
