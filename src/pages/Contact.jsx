@@ -69,7 +69,7 @@ const Contact = () => {
                                 <div className="info-icon"><Mail size={24} /></div>
                                 <div>
                                     <h4>Direct Contact</h4>
-                                    <p>hello@voxlom.com<br />+1 (555) 123-4567</p>
+                                    <p>iyappanvox3@gmail.com<br />+91 9092421284</p>
                                 </div>
                             </div>
                             <div className="info-item">
@@ -91,19 +91,19 @@ const Contact = () => {
                             <Briefcase className="card-icon" />
                             <h4>Sales</h4>
                             <p>Interested in our services? Reach out to our sales team.</p>
-                            <a href="mailto:sales@voxlom.com">sales@voxlom.com</a>
+                            <a href="mailto:iyappanvox3@gmail.com">iyappanvox3@gmail.com</a>
                         </div>
                         <div className="info-card">
                             <Settings className="card-icon" />
                             <h4>Support</h4>
                             <p>Existing client with a question? We're here to help.</p>
-                            <a href="mailto:support@voxlom.com">support@voxlom.com</a>
+                            <a href="mailto:iyappanvox3@gmail.com">iyappanvox3@gmail.com</a>
                         </div>
                         <div className="info-card">
                             <Users className="card-icon" />
                             <h4>Careers</h4>
                             <p>Want to join our innovtive team? Check our openings.</p>
-                            <a href="mailto:careers@voxlom.com">careers@voxlom.com</a>
+                            <a href="mailto:iyappanvox3@gmail.com">iyappanvox3@gmail.com</a>
                         </div>
                     </div>
 

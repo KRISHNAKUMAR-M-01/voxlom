@@ -24,7 +24,7 @@ const Home = () => {
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Customer Service",
-            "email": "info@voxlom.com"
+            "email": "iyappanvox3@gmail.com"
         },
         "sameAs": [
             "https://www.facebook.com/people/Voxlom-Innovative/pfbid02V1LwWnthEtk17snLNyXAHSgUmtozCMC1DmFKMVog7j65YUsGJJqbiUSPTXYLBqrsl/",

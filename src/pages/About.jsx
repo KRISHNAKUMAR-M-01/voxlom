@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import AboutThreeBackground from '../components/AboutThreeBackground';
+import ceoImage from '../assets/ceo1.jpeg';
 import './About.css';
 
 const StatItem = ({ target, label }) => {
@@ -189,6 +190,40 @@ export default function About() {
                         <StatItem target="160+" label="Projects Delivered" />
                         <StatItem target="50+" label="Happy Clients" />
                         <StatItem target="8+" label="Years Experience" />
+                    </div>
+                </section>
+
+                {/* CEO MESSAGE */}
+                <section className="about-section">
+                    <div className="container">
+                        <div className="ceo-wrapper">
+
+                            {/* LEFT: CEO IMAGE */}
+                            <div className="ceo-image">
+                                <img
+                                    src={ceoImage}
+                                    alt="CEO of Voxlom"
+                                />
+                            </div>
+
+                            {/* RIGHT: CEO MESSAGE */}
+                            <div className="ceo-content">
+                                <h2>Message from the CEO</h2>
+
+                                <p className="ceo-quote">
+                                    “At Voxlom, our vision is to empower businesses through intelligent
+                                    technology and innovative thinking. We believe technology should
+                                    create opportunities, not complexity. Our team is dedicated to
+                                    delivering scalable, reliable, and future-ready solutions that help
+                                    organizations grow with confidence.”
+                                </p>
+
+                                <span className="ceo-name">
+                                    — Mrs.SUGANTHI KAMARAJ, CEO, Voxlom Innovative Solutions
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
                 </section>
 
