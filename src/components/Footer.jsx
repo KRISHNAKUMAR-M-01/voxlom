@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
+import skillIndia from '../assets/certifications/skill_india.png';
+import isoCertified from '../assets/certifications/iso_certified.png';
+import msmeLogo from '../assets/certifications/msme.png';
+import ministryAffairs from '../assets/certifications/ministry_affairs.png';
 import { Twitter, Linkedin, Instagram, Facebook, Youtube, MessageCircle, X, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -263,6 +267,18 @@ const Footer = () => {
                                 <li><a href="#" onClick={openTerms}>Terms of Service</a></li>
                                 <li><a href="#" onClick={openStatus}>System Status</a></li>
                             </ul>
+                        </div>
+
+                    </div>
+
+                    {/* Certified By Section - Horizontal Row */}
+                    <div className="footer-certifications">
+                        <h4>Certified By</h4>
+                        <div className="certification-grid">
+                            <img src={skillIndia} alt="Skill India" className="cert-img large" />
+                            <img src={isoCertified} alt="ISO Certified" className="cert-img large" />
+                            <img src={msmeLogo} alt="MSME" className="cert-img" />
+                            <img src={ministryAffairs} alt="Ministry of External Affairs" className="cert-img" />
                         </div>
                     </div>
 

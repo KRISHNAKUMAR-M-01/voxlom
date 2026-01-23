@@ -1,12 +1,30 @@
-import React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Clock, Briefcase, Settings, Users } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Briefcase, Settings, Users, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
+    const [status, setStatus] = useState({ state: 'idle', message: '' });
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
+        setStatus({ state: 'loading', message: 'Sending message...' });
+
+        // EmailJS Configuration
+        // Replace these with your own IDs from EmailJS dashboard
+        const SERVICE_ID = 'service_xxxxxxx';
+        const TEMPLATE_ID = 'template_xxxxxxx';
+        const PUBLIC_KEY = 'your_public_key';
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+            .then((result) => {
+                setStatus({ state: 'success', message: 'Thank you! Your message has been sent.' });
+                e.target.reset();
+            }, (error) => {
+                console.error('EmailJS Error:', error);
+                setStatus({ state: 'error', message: 'Oops! There was a problem sending your message. Please try again later.' });
+            });
     };
 
     return (
@@ -31,13 +49,13 @@ const Contact = () => {
                             onSubmit={handleSubmit}
                         >
                             <div className="form-group">
-                                <input type="text" placeholder="Your Name" required />
+                                <input name="from_name" type="text" placeholder="Your Name" required />
                             </div>
                             <div className="form-group">
-                                <input type="email" placeholder="Your Email" required />
+                                <input name="reply_to" type="email" placeholder="Your Email" required />
                             </div>
                             <div className="form-group">
-                                <select className="form-select">
+                                <select name="service_interest" className="form-select">
                                     <option value="" disabled selected>Service of Interest</option>
                                     <option value="3d">3D Design & Animation</option>
                                     <option value="web">Web Development</option>
@@ -47,9 +65,34 @@ const Contact = () => {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <textarea rows="6" placeholder="Your Message" required></textarea>
+                                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
                             </div>
-                            <button type="submit" className="btn btn-primary">Send Message</button>
+
+                            {status.state === 'success' ? (
+                                <motion.div
+                                    className="status-message success"
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                >
+                                    <CheckCircle size={20} />
+                                    <span>{status.message}</span>
+                                </motion.div>
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className={`btn btn-primary ${status.state === 'loading' ? 'loading' : ''}`}
+                                    disabled={status.state === 'loading'}
+                                >
+                                    {status.state === 'loading' ? 'Sending...' : 'Send Message'}
+                                </button>
+                            )}
+
+                            {status.state === 'error' && (
+                                <div className="status-message error">
+                                    <AlertCircle size={20} />
+                                    <span>{status.message}</span>
+                                </div>
+                            )}
                         </motion.form>
 
                         <motion.div

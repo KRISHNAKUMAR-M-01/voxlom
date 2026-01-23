@@ -1,16 +1,46 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { jobs } from "../data/jobData";
 import "../styles/careers.css";
 
+// Import images for proper Vite handling
+import careerGrowthImg from '../assets/careergrowth.png';
+import collaborativeImg from '../assets/Collaborative.jpg';
+import workLifeBalanceImg from '../assets/Worklifebalance.png';
+import opportunityImg from '../assets/opportunity1.jpg';
+
 export default function Careers() {
+    const whyItems = [
+        {
+            title: "Career Growth",
+            desc: "Continuous learning, mentorship, and clear growth paths help you advance your career.",
+            image: careerGrowthImg
+        },
+        {
+            title: "Collaborative Culture",
+            desc: "Join a supportive team that values ideas, creativity, and teamwork.",
+            image: collaborativeImg
+        },
+        {
+            title: "Work-Life Balance",
+            desc: "We promote a healthy work-life balance with flexible and employee-friendly practices.",
+            image: workLifeBalanceImg
+        },
+        {
+            title: "Diverse Opportunities",
+            desc: "Explore roles across technology, design, data, and business domains.",
+            image: opportunityImg
+        }
+    ];
+
     return (
         <section className="careers-section">
             <div className="container">
 
                 {/* HERO INTRO */}
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
@@ -37,24 +67,21 @@ export default function Careers() {
                     </motion.div>
 
                     <div className="why-grid">
-                        {[
-                            { title: "Innovative Projects", desc: "Work on cutting-edge technologies and real-world projects that drive digital transformation." },
-                            { title: "Career Growth", desc: "Continuous learning, mentorship, and clear growth paths help you advance your career." },
-                            { title: "Collaborative Culture", desc: "Join a supportive team that values ideas, creativity, and teamwork." },
-                            { title: "Work-Life Balance", desc: "We promote a healthy work-life balance with flexible and employee-friendly practices." },
-                            { title: "Impactful Work", desc: "Your work directly contributes to solving meaningful business challenges." },
-                            { title: "Diverse Opportunities", desc: "Explore roles across technology, design, data, and business domains." }
-                        ].map((item, index) => (
+                        {whyItems.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="why-card"
+                                className="why-card image-card"
+                                style={{ backgroundImage: `url(${item.image})` }}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ y: -10 }}
                             >
-                                <h3>{item.title}</h3>
-                                <p>{item.desc}</p>
+                                <div className="why-overlay">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.desc}</p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -63,10 +90,10 @@ export default function Careers() {
                 {/* OPEN POSITIONS */}
                 <motion.h2
                     className="open-positions-title"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.6 }}
                 >
                     Open Positions
                 </motion.h2>
@@ -78,8 +105,9 @@ export default function Careers() {
                             className="job-card"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ y: -10 }}
                         >
                             <h3>{job.title}</h3>
                             <p className="job-desc">{job.description}</p>

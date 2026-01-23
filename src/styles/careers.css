@@ -4,37 +4,32 @@
 
 /* SECTION WRAPPER */
 .careers-section {
-    padding: 8rem 0;
-    min-height: 100vh;
+    padding: 10rem 0 6rem;
     background-color: var(--dark-bg);
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* INTRO */
+/* PAGE TITLE */
 .careers-section h1 {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(2.6rem, 5vw, 4rem);
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
     background: var(--gradient-1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
+/* INTRO TEXT */
 .careers-intro {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto 4rem;
     text-align: center;
     color: var(--text-secondary);
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* =====================
@@ -48,7 +43,7 @@
 
 .why-work h2 {
     font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
@@ -58,17 +53,91 @@
     margin: 0 auto 3rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    font-size: 1.05rem;
 }
 
+/* GRID */
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-/* SHARED CARD STYLES (MATCHING SERVICES) */
-.why-card,
+/* BASE CARD (NEUTRAL) */
+.why-card {
+    border-radius: 22px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: default;
+}
+
+/* =====================
+   IMAGE BASED CARDS
+===================== */
+
+.image-card {
+    position: relative;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-color);
+}
+
+.image-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.why-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.9));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+.why-overlay h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.why-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+/* =====================
+   OPEN POSITIONS
+===================== */
+
+.open-positions-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.2rem;
+    margin: 5.5rem 0 2.5rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* JOB GRID */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* JOB CARD */
+/* JOB CARD (REVERTED TO DARK THEME) */
 .job-card {
     background: var(--dark-card);
     padding: 2.5rem;
@@ -82,7 +151,6 @@
     text-align: left;
 }
 
-.why-card::before,
 .job-card::before {
     content: '';
     position: absolute;
@@ -93,70 +161,40 @@
     z-index: 0;
 }
 
-.why-card:hover,
 .job-card:hover {
     transform: translateY(-10px);
     border-color: rgba(251, 146, 60, 0.3);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
-.why-card:hover::before,
 .job-card:hover::before {
     opacity: 0.1;
 }
 
-.why-card h3,
 .job-card h3 {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 600;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
+    font-weight: 700;
     color: var(--text-primary);
     z-index: 1;
-}
-
-.why-card p,
-.job-desc,
-.job-meta {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    z-index: 1;
-}
-
-.why-card p {
-    margin-bottom: 0;
-}
-
-/* =====================
-   OPEN POSITIONS SPECIFIC
-===================== */
-
-.open-positions-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
-    margin: 6rem 0 3rem;
-    text-align: center;
-    color: var(--text-primary);
-}
-
-.jobs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
 .job-desc {
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
     flex-grow: 1;
+    z-index: 1;
 }
 
 .job-meta {
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.6rem;
     font-weight: 500;
-    color: var(--text-primary);
-    opacity: 0.8;
+    z-index: 1;
 }
 
 /* APPLY BUTTON */
@@ -183,10 +221,13 @@
     box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
 }
 
-/* RESPONSIVE */
+/* =====================
+   RESPONSIVE
+===================== */
+
 @media (max-width: 768px) {
     .careers-section {
-        padding: 5rem 0;
+        padding-top: 8rem;
     }
 
     .careers-section h1 {
@@ -195,10 +236,14 @@
 
     .why-work h2,
     .open-positions-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
-    .container {
-        padding: 0 1.5rem;
+    .image-card {
+        height: 280px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
     }
 }

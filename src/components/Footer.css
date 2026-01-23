@@ -7,9 +7,9 @@
 /* Main Footer Layout */
 .footer-main {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
 }
 
 /* Brand Section */
@@ -258,6 +258,42 @@
     margin: 0;
 }
 
+/* Certification Section (Horizontal) */
+.footer-certifications {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-certifications h4 {
+    color: #FF9D2E;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.certification-grid {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.cert-img {
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cert-img.large {
+    height: 80px;
+}
+
+.cert-img:hover {
+    transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .footer-main {
@@ -267,13 +303,36 @@
 
     .footer-brand {
         max-width: 100%;
+        grid-column: span 2;
+    }
+
+    .certification-grid {
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .cert-img {
+        height: 50px;
     }
 }
 
 @media (max-width: 640px) {
     .footer-main {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    .certification-grid {
+        gap: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .cert-img {
+        height: 40px;
     }
 
     .footer-bottom {

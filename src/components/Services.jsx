@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { AIIcon, CloudIcon, CodeIcon, ConsultingIcon } from './ServiceIcons';
 import './Services.css';
 
@@ -52,6 +53,19 @@ const Services = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    className="services-footer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                    style={{ textAlign: 'center', marginTop: '4rem' }}
+                >
+                    <Link to="/services" className="btn btn-primary">
+                        Read More
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );
