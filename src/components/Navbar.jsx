@@ -28,8 +28,8 @@ const Navbar = () => {
                 <Link to="/" className="logo" onClick={closeMenu}>
                     <img src={logo} alt="Voxlom Logo" className="logo-img" />
                     <div className="logo-text">
-                        <span className="logo-title">voxlom</span>
-                        <span className="logo-subtitle">innovative solutions</span>
+                        <span className="logo-title">VOXLOM</span>
+                        <span className="logo-subtitle">INNOVATIVE SOLUTIONS</span>
                     </div>
                 </Link>
 

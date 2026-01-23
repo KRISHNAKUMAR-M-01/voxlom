@@ -242,7 +242,7 @@ const Footer = () => {
                         <div className="footer-brand">
                             <Link to="/" className="logo">
                                 <img src={logo} alt="Voxlom Logo" className="logo-img" />
-                                <span>Voxlom Innovative Solution</span>
+                                <span>VOXLOM INNOVATIVE SOLUTION</span>
                             </Link>
                             <p className="footer-desc">Redefining the digital landscape through innovation and cutting-edge software solutions.</p>
                         </div>
@@ -309,7 +309,7 @@ const Footer = () => {
                         </div>
 
                         <div className="footer-copyright">
-                            © {new Date().getFullYear()} Voxlom Innovative Solution. All Rights Reserved
+                            © {new Date().getFullYear()} VOXLOM INNOVATIVE SOLUTION. All Rights Reserved
                         </div>
                     </div>
                 </div>
