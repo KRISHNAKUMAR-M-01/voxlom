@@ -9,6 +9,7 @@ import careerGrowthImg from '../assets/careergrowth.png';
 import collaborativeImg from '../assets/Collaborative.jpg';
 import workLifeBalanceImg from '../assets/Worklifebalance.png';
 import opportunityImg from '../assets/opportunity1.jpg';
+import voxVideo from '../assets/vox.mp4';
 
 export default function Careers() {
     const whyItems = [
@@ -36,19 +37,36 @@ export default function Careers() {
 
     return (
         <section className="careers-section">
-            <div className="container">
+            {/* HERO SECTION WITH VIDEO BG */}
+            <div className="careers-hero">
+                <div className="careers-hero-bg">
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="careers-video"
+                    >
+                        <source src={voxVideo} type="video/mp4" />
+                    </video>
+                    <div className="careers-video-overlay"></div>
+                </div>
+                <div className="container">
+                    <motion.div
+                        className="careers-hero-content"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h1>Careers at Voxlom</h1>
+                        <p className="careers-intro">
+                            Join Voxlom and build innovative solutions with a passionate team.
+                        </p>
+                    </motion.div>
+                </div>
+            </div>
 
-                {/* HERO INTRO */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h1>Careers at Voxlom</h1>
-                    <p className="careers-intro">
-                        Join Voxlom and build innovative solutions with a passionate team.
-                    </p>
-                </motion.div>
+            <div className="container">
 
                 {/* WHY WORK WITH US */}
                 <div className="why-work">

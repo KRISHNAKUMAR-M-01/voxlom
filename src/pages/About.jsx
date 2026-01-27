@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import aboutVideo from '../assets/abut video.mp4';
 import ceoImage from '../assets/ceo1.jpeg';
+import aboutBg from '../assets/about bg.jpg';
+import whoImage from '../assets/who.avif';
 import './About.css';
 
 const StatItem = ({ target, label }) => {
@@ -113,21 +115,26 @@ export default function About() {
                 <section className="about-section">
                     <div className="container about-grid">
                         <motion.div
+                            className="who-text-bg"
+                            style={{ backgroundImage: `url(${whoImage})` }}
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="section-title-alt">Who We Are</h2>
-                            <p className="about-p">
-                                Voxlom Innovative Solution is a technology-driven company focused on
-                                delivering modern digital experiences, scalable software solutions,
-                                and cutting-edge innovation.
-                            </p>
-                            <p className="about-p">
-                                We blend creativity with engineering to help businesses grow,
-                                transform, and succeed in the digital era.
-                            </p>
+                            <div className="who-overlay"></div>
+                            <div className="who-text-content">
+                                <h2 className="section-title-alt">Who We Are</h2>
+                                <p className="about-p">
+                                    Voxlom Innovative Solution is a technology-driven company focused on
+                                    delivering modern digital experiences, scalable software solutions,
+                                    and cutting-edge innovation.
+                                </p>
+                                <p className="about-p">
+                                    We blend creativity with engineering to help businesses grow,
+                                    transform, and succeed in the digital era.
+                                </p>
+                            </div>
                         </motion.div>
 
                         <motion.div
@@ -237,7 +244,8 @@ export default function About() {
                 </section>
 
                 {/* CTA */}
-                <section className="about-cta">
+                <section className="about-cta" style={{ backgroundImage: `url(${aboutBg})` }}>
+                    <div className="cta-overlay"></div>
                     <div className="container">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}

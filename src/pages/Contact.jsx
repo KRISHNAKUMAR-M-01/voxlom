@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Clock, Briefcase, Settings, Users, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Briefcase, Settings, Users, Send, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import contactIllustration from '../assets/contact-illustration.jpg';
+import contactImage from '../assets/contact.avif';
 import './Contact.css';
 
 const Contact = () => {
@@ -137,11 +138,16 @@ const Contact = () => {
                             <p>Interested in our services? Reach out to our sales team.</p>
                             <a href="mailto:iyappanvox3@gmail.com">iyappanvox3@gmail.com</a>
                         </div>
-                        <div className="info-card">
-                            <Settings className="card-icon" />
+                        <div className="info-card support-card service-box has-bg-image" style={{ backgroundImage: `linear-gradient(rgba(10, 25, 47, 0.45), rgba(10, 25, 47, 0.65)), url(${contactImage})` }}>
+                            <div className="service-overlay"></div>
+                            <div className="service-icon">
+                                <Settings className="service-icon-svg" />
+                            </div>
                             <h4>Support</h4>
                             <p>Existing client with a question? We're here to help.</p>
-                            <a href="mailto:iyappanvox3@gmail.com">iyappanvox3@gmail.com</a>
+                            <a href="mailto:iyappanvox3@gmail.com" className="read-more-link">
+                                iyappanvox3@gmail.com
+                            </a>
                         </div>
                         <div className="info-card">
                             <Users className="card-icon" />
