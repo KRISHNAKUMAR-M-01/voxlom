@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Clock, Briefcase, Settings, Users, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import contactIllustration from '../assets/contact-illustration.jpg';
 import './Contact.css';
 
 const Contact = () => {
@@ -168,6 +169,15 @@ const Contact = () => {
                         ></iframe>
                     </motion.div>
                 </div>
+                <motion.div
+                    className="contact-illustration-full"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                >
+                    <img src={contactIllustration} alt="Team Illustration" />
+                </motion.div>
             </section>
         </div>
     );

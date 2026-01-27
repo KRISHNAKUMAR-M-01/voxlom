@@ -21,9 +21,10 @@ const Navbar = () => {
     const closeMenu = () => setIsMenuOpen(false);
 
     const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services' || location.pathname.startsWith('/careers');
+    const isAboutPage = location.pathname === '/about';
 
     return (
-        <nav className={`navbar ${isScrolled || isSecondaryPage ? 'scrolled' : ''}`}>
+        <nav className={`navbar ${isScrolled || isSecondaryPage ? 'scrolled' : ''} ${isAboutPage && !isScrolled ? 'transparent-light' : ''}`}>
             <div className="nav-container">
                 <Link to="/" className="logo" onClick={closeMenu}>
                     <img src={logo} alt="Voxlom Logo" className="logo-img" />

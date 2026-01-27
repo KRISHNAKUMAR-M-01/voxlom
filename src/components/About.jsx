@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './About.css';
+import aboutBgImg from '../assets/services/p3.avif';
 
 const StatItem = ({ target, label }) => {
     const [count, setCount] = useState(0);
@@ -37,7 +38,12 @@ const StatItem = ({ target, label }) => {
 
 const About = () => {
     return (
-        <section id="about" className="about">
+        <section
+            id="about"
+            className="about about-parallax"
+            style={{ backgroundImage: `url(${aboutBgImg})` }}
+        >
+            <div className="about-overlay"></div>
             <div className="container">
                 <div className="section-header">
                     <motion.h2

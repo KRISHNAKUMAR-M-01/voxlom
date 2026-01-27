@@ -1,9 +1,14 @@
 import React from "react";
 import { ArrowRight, ChevronUp } from "lucide-react";
 
-const ServiceCard = ({ icon, title, shortText, fullText, open = false, onToggle }) => {
+const ServiceCard = ({ icon, title, shortText, fullText, open = false, onToggle, image }) => {
     return (
-        <div className={`service-box${open ? " is-expanded" : ""}`} aria-expanded={open}>
+        <div
+            className={`service-box${open ? " is-expanded" : ""}${image ? " has-bg-image" : ""}`}
+            aria-expanded={open}
+            style={image ? { backgroundImage: `url(${image})` } : {}}
+        >
+            <div className="service-overlay"></div>
             <div className="service-icon">{icon}</div>
 
             <h3>{title}</h3>

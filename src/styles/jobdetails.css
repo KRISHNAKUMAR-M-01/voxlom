@@ -6,7 +6,7 @@
 .job-details-hero {
     padding: 10rem 2rem 5rem;
     text-align: center;
-    background: radial-gradient(circle at center, #1e293b 0%, #020617 70%);
+    background: radial-gradient(circle at center, #f8fafc 0%, #ffffff 100%);
     position: relative;
     border-bottom: 1px solid var(--border-color);
 }

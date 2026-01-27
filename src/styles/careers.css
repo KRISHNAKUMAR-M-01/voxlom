@@ -80,7 +80,7 @@
     background-position: center;
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 15px 45px rgba(10, 25, 47, 0.1);
     border: 1px solid var(--border-color);
 }
 
@@ -94,8 +94,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.9));
+            rgba(10, 25, 47, 0.2),
+            rgba(10, 25, 47, 0.9));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -114,7 +114,7 @@
 .why-overlay p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #e5e7eb;
+    color: #cbd5e1;
 }
 
 /* =====================
@@ -149,6 +149,8 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Added subtle shadow */
 }
 
 .job-card::before {
@@ -163,8 +165,9 @@
 
 .job-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(251, 146, 60, 0.3);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(10, 25, 47, 0.2);
+    box-shadow: 0 20px 40px -5px rgba(10, 25, 47, 0.15);
+    /* Stronger shadow on hover */
 }
 
 .job-card:hover::before {
@@ -216,9 +219,9 @@
 
 .btn-outline:hover {
     background: var(--primary-color);
-    color: #000;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
 }
 
 /* =====================

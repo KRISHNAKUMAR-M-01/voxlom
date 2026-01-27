@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import AboutThreeBackground from '../components/AboutThreeBackground';
+import aboutVideo from '../assets/abut video.mp4';
 import ceoImage from '../assets/ceo1.jpeg';
 import './About.css';
 
@@ -83,7 +83,16 @@ export default function About() {
                 {/* HERO */}
                 <section className="about-hero">
                     <div className="about-hero-bg">
-                        <AboutThreeBackground />
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="about-video"
+                        >
+                            <source src={aboutVideo} type="video/mp4" />
+                        </video>
+                        <div className="hero-video-overlay"></div>
                     </div>
                     <div className="container">
                         <motion.div

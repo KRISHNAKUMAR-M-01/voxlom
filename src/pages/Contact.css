@@ -1,5 +1,6 @@
 .contact-hero {
     padding-top: 12rem;
+    padding-bottom: 0;
     background: var(--dark-bg);
 }
 
@@ -40,8 +41,7 @@
 }
 
 .form-group select option {
-    background: #0f172a;
-    /* Solid dark background for options */
+    background: #ffffff;
     color: var(--text-primary);
     padding: 1rem;
 }
@@ -51,7 +51,8 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: rgba(251, 146, 60, 0.05);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(10, 25, 47, 0.05);
 }
 
 .contact-info {
@@ -152,12 +153,11 @@
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(10, 25, 47, 0.08);
 }
 
 .map-container iframe {
     display: block;
-    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
 
 .status-message {
@@ -186,4 +186,23 @@
     opacity: 0.7;
     cursor: not-allowed;
     position: relative;
+}
+
+.contact-illustration-full {
+    margin-top: 6rem;
+    width: 100%;
+    margin-bottom: -5px;
+    /* Removes microscopic pixel gap with footer */
+}
+
+.contact-illustration-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .contact-illustration-full {
+        margin-top: 3rem;
+    }
 }

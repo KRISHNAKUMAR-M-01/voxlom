@@ -10,7 +10,10 @@ import {
     Zap,
     Database,
     Globe,
-    Users
+    Users,
+    Smartphone,
+    ClipboardCheck,
+    Cpu
 } from 'lucide-react';
 
 export const AIIcon = () => <Brain className="service-icon-svg" />;
@@ -23,4 +26,7 @@ export const SecurityIcon = () => <Shield className="service-icon-svg" />;
 export const AutomationIcon = () => <Zap className="service-icon-svg" />;
 export const DataIcon = () => <Database className="service-icon-svg" />;
 export const WebIcon = () => <Globe className="service-icon-svg" />;
+export const MobileIcon = () => <Smartphone className="service-icon-svg" />;
+export const TestingIcon = () => <ClipboardCheck className="service-icon-svg" />;
+export const DigitalIcon = () => <Cpu className="service-icon-svg" />;
 export const SourcingIcon = () => <Users className="service-icon-svg" />;

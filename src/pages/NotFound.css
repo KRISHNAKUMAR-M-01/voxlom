@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(10, 25, 47, 0.05) 0%, transparent 70%);
     z-index: 0;
 }
 
@@ -89,17 +89,17 @@
 
 .error-actions .btn-primary {
     background: var(--gradient-1);
-    color: var(--dark-bg);
-    box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(10, 25, 47, 0.15);
 }
 
 .error-actions .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(251, 146, 60, 0.4);
+    box-shadow: 0 6px 20px rgba(10, 25, 47, 0.2);
 }
 
 .error-actions .btn-secondary {
-    background: var(--dark-card);
+    background: #f8fafc;
     color: var(--text-primary);
     border: 1px solid var(--border-color);
 }
@@ -142,7 +142,7 @@
 .links-grid a:hover {
     color: var(--accent-color);
     border-color: var(--primary-color);
-    background: rgba(251, 146, 60, 0.05);
+    background: rgba(10, 25, 47, 0.05);
     transform: translateY(-2px);
 }
 
@@ -150,9 +150,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }

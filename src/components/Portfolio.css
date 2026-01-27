@@ -51,9 +51,8 @@
 .portfolio-bento {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 350px 280px;
     gap: 1.5rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -67,14 +66,13 @@
     border: 1px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     background: var(--dark-card);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
 }
 
 .bento-item:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
-    /* Added inner glow */
-    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.12);
+    border-color: var(--primary-color);
     z-index: 2;
 }
 
@@ -108,12 +106,12 @@
 /* Top Row: 2 Items (50% / 50%) */
 .bento-item:nth-child(1) {
     grid-column: span 3;
-    grid-row: 1;
+    min-height: 400px;
 }
 
 .bento-item:nth-child(2) {
     grid-column: span 3;
-    grid-row: 1;
+    min-height: 400px;
 }
 
 /* Bottom Row: 3 Items (33% each) */
@@ -121,22 +119,23 @@
 .bento-item:nth-child(4),
 .bento-item:nth-child(5) {
     grid-column: span 2;
-    grid-row: 2;
+    min-height: 300px;
 }
 
 /* --- Intro Card Styling --- */
 .bento-intro {
-    background: linear-gradient(145deg, var(--dark-secondary), #1e293b);
+    background: linear-gradient(145deg, #0a192f, #112240);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
     text-align: left;
+    color: #ffffff;
 }
 
 .portfolio-intro-content h3 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -146,7 +145,7 @@
 }
 
 .portfolio-intro-content p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
     margin-bottom: 2rem;
     max-width: 90%;
@@ -161,7 +160,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .intro-decoration span:nth-child(1) {
@@ -213,7 +212,7 @@
     left: 0;
     width: 100%;
     padding: 1.5rem 2rem;
-    background: linear-gradient(to top, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.5) 80%, transparent);
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.5) 80%, transparent);
     z-index: 2;
     transition: var(--transition);
 }
@@ -228,27 +227,27 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--secondary-color);
+    color: #FB923C;
     margin-bottom: 0.5rem;
     display: block;
 }
 
 .portfolio-overlay h3 {
     font-size: 1.4rem;
-    color: var(--text-primary);
+    color: #ffffff;
     line-height: 1.3;
     margin-bottom: 0.5rem;
 }
 
 .portfolio-overlay p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
 }
 
 .portfolio-link {
     margin-top: 0.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #FB923C;
     display: flex;
     align-items: center;
     gap: 0.5rem;

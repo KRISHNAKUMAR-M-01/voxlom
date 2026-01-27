@@ -2,7 +2,7 @@
 .apply-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(10, 25, 47, 0.4);
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
     overflow-y: auto;
     max-height: 90vh;
     border: 1px solid var(--border-color);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.15);
     animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -109,7 +109,7 @@
 /* INPUTS */
 .form-grid input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03);
+    background: #f8fafc;
     border: 1px solid var(--border-color);
     padding: 1rem;
     font-size: 0.95rem;
@@ -122,7 +122,7 @@
 
 .form-grid input:focus {
     border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
     box-shadow: 0 0 0 4px rgba(251, 146, 60, 0.1);
 }
 
@@ -136,7 +136,7 @@
     gap: 2rem;
     margin-bottom: 2rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: #f8fafc;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
@@ -181,7 +181,7 @@
     height: 150px;
     border: 2px dashed var(--border-color);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #f8fafc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,12 +249,12 @@
     border-radius: 12px;
     transition: var(--transition);
     font-family: 'Outfit', sans-serif;
-    box-shadow: 0 10px 30px rgba(251, 146, 60, 0.2);
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.1);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(251, 146, 60, 0.4);
+    box-shadow: 0 15px 40px rgba(10, 25, 47, 0.2);
 }
 
 /* SCROLLBAR FOR MODAL */
@@ -267,12 +267,12 @@
 }
 
 .apply-modal::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(10, 25, 47, 0.1);
     border-radius: 4px;
 }
 
 .apply-modal::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(10, 25, 47, 0.2);
 }
 
 /* RESPONSIVE */
