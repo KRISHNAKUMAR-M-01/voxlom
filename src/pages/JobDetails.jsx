@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from 'react-helmet-async';
 import { jobs } from "../data/jobData";
 import "../styles/jobdetails.css";
 import ApplyJobModal from "../components/ApplyJobModal";
@@ -22,6 +23,15 @@ export default function JobDetails() {
 
     return (
         <>
+            <Helmet>
+                <title>{`${job.title} - Careers | Voxlom Innovative Solution`}</title>
+                <meta name="description" content={`Apply for the ${job.title} position at Voxlom. Join our innovative team and grow your career.`} />
+                <meta name="keywords" content={`${job.title}, tech careers, software jobs, hiring ${job.title}`} />
+                <link rel="canonical" href={`https://voxlom.com/careers/${job.id}`} />
+                <meta property="og:title" content={`${job.title} vacancy at Voxlom`} />
+                <meta property="og:description" content={`Join us as a ${job.title}. ${job.experience} experience required.`} />
+                <meta property="og:type" content="website" />
+            </Helmet>
             {/* HERO */}
             <section className="job-details-hero">
                 <motion.div

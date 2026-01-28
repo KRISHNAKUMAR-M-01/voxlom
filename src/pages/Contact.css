@@ -111,7 +111,9 @@
     border-color: var(--primary-color);
 }
 
-.support-card {
+.support-card,
+.career-card,
+.sales-card {
     position: relative;
     overflow: hidden;
     background-size: cover;
@@ -121,7 +123,9 @@
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-.support-card .service-overlay {
+.support-card .service-overlay,
+.career-card .service-overlay,
+.sales-card .service-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(10, 25, 47, 0.35), rgba(10, 25, 47, 0.55));
@@ -129,7 +133,9 @@
     z-index: 0;
 }
 
-.support-card .service-icon {
+.support-card .service-icon,
+.career-card .service-icon,
+.sales-card .service-icon {
     margin-bottom: 2rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.25);
@@ -144,19 +150,25 @@
     z-index: 1;
 }
 
-.support-card:hover .service-icon {
+.support-card:hover .service-icon,
+.career-card:hover .service-icon,
+.sales-card:hover .service-icon {
     background: rgba(255, 255, 255, 0.35);
     transform: scale(1.1) rotate(5deg);
     border-color: #ffffff;
 }
 
-.support-card .service-icon-svg {
+.support-card .service-icon-svg,
+.career-card .service-icon-svg,
+.sales-card .service-icon-svg {
     width: 32px;
     height: 32px;
     color: #ffffff;
 }
 
-.support-card h4 {
+.support-card h4,
+.career-card h4,
+.sales-card h4 {
     font-family: 'Outfit', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -167,7 +179,9 @@
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.support-card p {
+.support-card p,
+.career-card p,
+.sales-card p {
     color: #ffffff;
     font-size: 1rem;
     line-height: 1.6;
@@ -178,7 +192,9 @@
     font-weight: 500;
 }
 
-.support-card .read-more-link {
+.support-card .read-more-link,
+.career-card .read-more-link,
+.sales-card .read-more-link {
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
@@ -190,10 +206,19 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.support-card .read-more-link:hover {
-    gap: 1rem;
-    color: var(--primary-color);
+.support-card .read-more-link:hover,
+.career-card .read-more-link:hover,
+.sales-card .read-more-link:hover {
+    color: #7dd3fc !important;
+    /* Bright sky blue for visibility on dark cards */
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(125, 211, 252, 0.5);
+    text-decoration: underline;
 }
+
+
+
+
 
 .support-card .read-more-link svg {
     transition: var(--transition);

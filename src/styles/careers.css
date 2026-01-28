@@ -4,7 +4,7 @@
 
 /* SECTION WRAPPER */
 .careers-section {
-    padding: 0 0 10rem 0;
+    padding: 0;
     background-color: var(--dark-bg);
     min-height: 100vh;
 }
@@ -163,13 +163,22 @@
    OPEN POSITIONS
 ===================== */
 
+.open-positions-section {
+    background-color: #f1f5f9;
+    /* A bit more grey */
+    padding: 6rem 0 10rem;
+    margin-top: 5rem;
+    border-top: 1px solid var(--border-color);
+}
+
 .open-positions-title {
     font-family: 'Outfit', sans-serif;
     font-size: 2.2rem;
-    margin: 5.5rem 0 2.5rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     color: var(--text-primary);
 }
+
 
 /* JOB GRID */
 .jobs-grid {

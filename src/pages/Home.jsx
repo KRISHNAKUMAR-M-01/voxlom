@@ -37,7 +37,7 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Voxlom Innovative Solution - AI, Cloud & Software Development Services</title>
-                <meta name="description" content="Transform your business with Voxlom's innovative technology solutions. Expert AI/ML, cloud engineering, software development, cybersecurity, and IT consulting services." />
+                <meta name="description" content="Transform your business with Voxlom's innovative AI/ML, cloud, and software solutions. We deliver expert technology services for the digital era." />
                 <meta name="keywords" content="technology solutions, AI services, machine learning, cloud engineering, software development, IT consulting, web development, mobile apps, cybersecurity, digital transformation" />
                 <link rel="canonical" href="https://voxlom.com" />
 

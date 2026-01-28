@@ -177,7 +177,11 @@ const HelpCenterContent = () => (
                     <Mail size={20} />
                     <div>
                         <strong>Email</strong>
-                        <p>iyappanvox3@gmail.com</p>
+                        <p>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iyappanvox3@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                iyappanvox3@gmail.com
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

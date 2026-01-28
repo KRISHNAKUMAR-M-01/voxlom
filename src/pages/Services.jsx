@@ -212,7 +212,7 @@ const Services = () => {
         <>
             <Helmet>
                 <title>Our Services - Technology Solutions | Voxlom Innovative Solution</title>
-                <meta name="description" content="Explore Voxlom's comprehensive technology services including AI/ML, cloud engineering, software development, cybersecurity, UI/UX design, and IT consulting. Serving manufacturing, healthcare, finance, and more." />
+                <meta name="description" content="Explore Voxlom's technology services including AI/ML, cloud, software development, and UI/UX design. Delivering excellence across all major industries." />
                 <meta name="keywords" content="AI services, machine learning, cloud engineering, software development, cybersecurity, IT consulting, web development, mobile app development, data analytics, automation solutions" />
                 <link rel="canonical" href="https://voxlom.com/services" />
 

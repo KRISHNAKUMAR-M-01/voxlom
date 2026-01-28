@@ -60,7 +60,7 @@ export default function About() {
         <>
             <Helmet>
                 <title>About Us - Voxlom Innovative Solution | Our Mission & Vision</title>
-                <meta name="description" content="Discover Voxlom's journey, mission, and vision. We blend creativity with engineering to help businesses transform and succeed in the digital era with 8+ years of experience." />
+                <meta name="description" content="Discover Voxlom's mission and vision. Our team blends creativity with engineering to help businesses succeed in the digital era." />
                 <meta name="keywords" content="about voxlom, technology company, digital transformation, software solutions, innovation, mission, vision, values" />
                 <link rel="canonical" href="https://voxlom.com/about" />
 

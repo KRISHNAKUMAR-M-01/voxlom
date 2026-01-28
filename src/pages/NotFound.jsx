@@ -23,7 +23,7 @@ const NotFound = () => {
         <>
             <Helmet>
                 <title>Page Not Found - 404 Error | Voxlom Innovative Solution</title>
-                <meta name="description" content="The page you are looking for could not be found. Return to Voxlom's homepage to explore our AI/ML, cloud engineering, software development, and IT consulting services." />
+                <meta name="description" content="The page you are looking for could not be found. Return to Voxlom's homepage to explore our AI/ML, cloud, and software development services." />
                 <meta name="keywords" content="404 error, page not found, voxlom, technology solutions, AI services, cloud engineering" />
                 <meta name="robots" content="noindex, follow" />
                 <link rel="canonical" href="https://voxlom.com/404" />
@@ -61,7 +61,7 @@ const NotFound = () => {
                         >
                             404
                         </motion.div>
-                        
+
                         <motion.h1
                             className="error-title"
                             initial={{ opacity: 0 }}
@@ -70,7 +70,7 @@ const NotFound = () => {
                         >
                             Page Not Found
                         </motion.h1>
-                        
+
                         <motion.p
                             className="error-description"
                             initial={{ opacity: 0 }}
@@ -92,8 +92,8 @@ const NotFound = () => {
                                 <Home size={20} />
                                 Go to Homepage
                             </Link>
-                            <button 
-                                onClick={() => window.history.back()} 
+                            <button
+                                onClick={() => window.history.back()}
                                 className="btn btn-secondary"
                             >
                                 <ArrowLeft size={20} />
