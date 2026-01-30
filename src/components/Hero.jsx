@@ -35,9 +35,6 @@ const Hero = () => {
                     <a href="/contact" className="btn btn-secondary">Get Started</a>
                 </motion.div>
             </div>
-            <div className="scroll-indicator">
-                <div className="mouse"></div>
-            </div>
         </section>
     );
 };

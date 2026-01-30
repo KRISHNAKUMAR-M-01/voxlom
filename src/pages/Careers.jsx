@@ -40,7 +40,7 @@ export default function Careers() {
         <>
             <Helmet>
                 <title>Careers - Join Our Team | Voxlom Innovative Solution</title>
-                <meta name="description" content="Join Voxlom's passionate team and build innovative solutions. Explore open positions in software development, design, and technology." />
+                <meta name="description" content="Join Voxlom's passionate team and build Innovative Solution. Explore open positions in software development, design, and technology." />
                 <meta name="keywords" content="voxlom careers, tech jobs, software engineer jobs, web developer careers, join voxlom" />
                 <link rel="canonical" href="https://voxlom.com/careers" />
                 <meta property="og:title" content="Careers at Voxlom - Join our Innovative Team" />
@@ -72,7 +72,7 @@ export default function Careers() {
                         >
                             <h1>Careers at Voxlom</h1>
                             <p className="careers-intro">
-                                Join Voxlom and build innovative solutions with a passionate team.
+                                Join Voxlom and build Innovative Solution with a passionate team.
                             </p>
                         </motion.div>
                     </div>
@@ -160,3 +160,4 @@ export default function Careers() {
         </>
     );
 }
+

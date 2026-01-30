@@ -109,7 +109,7 @@ const Services = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="central-title">Innovative Technology Solutions</h2>
+                        <h2 className="central-title">Innovative Technology solution</h2>
                         <p className="central-subtitle">
                             Streamline your business operations with a complete digital toolkit—from
                             intelligence and automation to enterprise software and security.
@@ -136,3 +136,4 @@ const Services = () => {
 };
 
 export default Services;
+

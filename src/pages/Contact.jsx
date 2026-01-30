@@ -36,11 +36,11 @@ const Contact = () => {
         <>
             <Helmet>
                 <title>Contact Us - Get in Touch | Voxlom Innovative Solution</title>
-                <meta name="description" content="Have a project in mind? Contact Voxlom today for expert AI/ML, cloud, and software solutions. We're here to help you innovate." />
-                <meta name="keywords" content="contact voxlom, technology consulting, hire developers, AI solutions contact" />
+                <meta name="description" content="Have a project in mind? Contact Voxlom today for expert AI/ML, cloud, and software solution. We're here to help you innovate." />
+                <meta name="keywords" content="contact voxlom, technology consulting, hire developers, AI solution contact" />
                 <link rel="canonical" href="https://voxlom.com/contact" />
                 <meta property="og:title" content="Contact Voxlom - Let's Innovate Together" />
-                <meta property="og:description" content="Reach out to Voxlom for cutting-edge technology solutions and business consulting." />
+                <meta property="og:description" content="Reach out to Voxlom for cutting-edge technology solution and business consulting." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://voxlom.com/contact" />
             </Helmet>
@@ -217,3 +217,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

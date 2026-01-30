@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const closeMenu = () => setIsMenuOpen(false);
 
-    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services' || location.pathname.startsWith('/careers');
+    const isSecondaryPage = location.pathname === '/contact' || location.pathname === '/services' || location.pathname.startsWith('/careers') || location.pathname.startsWith('/services/');
     const isAboutPage = location.pathname === '/about';
 
     return (
@@ -30,7 +30,7 @@ const Navbar = () => {
                     <img src={logo} alt="Voxlom Logo" className="logo-img" />
                     <div className="logo-text">
                         <span className="logo-title">VOXLOM</span>
-                        <span className="logo-subtitle">INNOVATIVE SOLUTIONS</span>
+                        <span className="logo-subtitle">INNOVATIVE SOLUTION</span>
                     </div>
                 </Link>
 

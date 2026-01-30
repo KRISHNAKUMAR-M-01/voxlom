@@ -12,7 +12,7 @@ const Home = () => {
         "name": "Voxlom Innovative Solution",
         "url": "https://voxlom.com",
         "logo": "https://voxlom.com/logo.png",
-        "description": "Leading technology solutions provider specializing in AI/ML, cloud engineering, software development, and IT consulting services.",
+        "description": "Leading technology solution provider specializing in AI/ML, cloud engineering, software development, and IT consulting services.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Kamarajar Tech Campus, 39/A, Gandhi East Street, Panagudi",
@@ -37,21 +37,21 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Voxlom Innovative Solution - AI, Cloud & Software Development Services</title>
-                <meta name="description" content="Transform your business with Voxlom's innovative AI/ML, cloud, and software solutions. We deliver expert technology services for the digital era." />
-                <meta name="keywords" content="technology solutions, AI services, machine learning, cloud engineering, software development, IT consulting, web development, mobile apps, cybersecurity, digital transformation" />
+                <meta name="description" content="Transform your business with Voxlom's innovative AI/ML, cloud, and software solution. We deliver expert technology services for the digital era." />
+                <meta name="keywords" content="technology solution, AI services, machine learning, cloud engineering, software development, IT consulting, web development, mobile apps, cybersecurity, digital transformation" />
                 <link rel="canonical" href="https://voxlom.com" />
 
                 {/* Open Graph */}
-                <meta property="og:title" content="Voxlom Innovative Solution - Technology Solutions Provider" />
-                <meta property="og:description" content="Transform your business with innovative AI, cloud, and software development solutions." />
+                <meta property="og:title" content="Voxlom Innovative Solution - Technology solution Provider" />
+                <meta property="og:description" content="Transform your business with innovative AI, cloud, and software development solution." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://voxlom.com" />
                 <meta property="og:site_name" content="Voxlom Innovative Solution" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Voxlom Innovative Solution - Technology Solutions" />
-                <meta name="twitter:description" content="Transform your business with innovative AI, cloud, and software development solutions." />
+                <meta name="twitter:title" content="Voxlom Innovative Solution - Technology solution" />
+                <meta name="twitter:description" content="Transform your business with innovative AI, cloud, and software development solution." />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">

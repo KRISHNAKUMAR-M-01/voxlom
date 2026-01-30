@@ -1,19 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #0a192f;
-  --primary-glow: rgba(10, 25, 47, 0.15);
-  --secondary-color: #112240;
-  --accent-color: #0a192f;
+  --primary-color: #1d4f91;
+  /* Voxlom Blue */
+  --primary-glow: rgba(29, 79, 145, 0.15);
+  --secondary-color: #f15a24;
+  /* Voxlom Orange */
+  --accent-color: #8cc63f;
+  /* Voxlom Green */
+  --voxlom-blue: #1d4f91;
+  --voxlom-orange: #f15a24;
+  --voxlom-yellow: #d9e021;
+  --voxlom-green: #8cc63f;
+  --voxlom-gray: #4d5e70;
+
   --dark-bg: #ffffff;
   --dark-secondary: #f8fafc;
   --dark-card: #ffffff;
-  --text-primary: #0a192f;
-  --text-secondary: #475569;
+  --text-primary: #1d4f91;
+  --text-secondary: #4d5e70;
   --text-muted: #64748b;
-  --gradient-1: linear-gradient(135deg, #0a192f 0%, #172554 100%);
+
+  /* Brand Gradient: Orange -> Yellow -> Green */
+  --gradient-brand: linear-gradient(135deg, #f15a24 0%, #d9e021 50%, #8cc63f 100%);
+  --gradient-1: linear-gradient(135deg, #1d4f91 0%, #2a69c0 100%);
   --gradient-2: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  --border-color: rgba(10, 25, 47, 0.1);
+
+  --border-color: rgba(29, 79, 145, 0.1);
   --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 

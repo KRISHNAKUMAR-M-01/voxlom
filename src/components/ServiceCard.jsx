@@ -1,11 +1,11 @@
 import React from "react";
-import { ArrowRight, ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-const ServiceCard = ({ icon, title, shortText, fullText, open = false, onToggle, image }) => {
+const ServiceCard = ({ id, icon, title, shortText, image }) => {
     return (
         <div
-            className={`service-box${open ? " is-expanded" : ""}${image ? " has-bg-image" : ""}`}
-            aria-expanded={open}
+            className={`service-box${image ? " has-bg-image" : ""}`}
             style={image ? { backgroundImage: `url(${image})` } : {}}
         >
             <div className="service-overlay"></div>
@@ -13,21 +13,15 @@ const ServiceCard = ({ icon, title, shortText, fullText, open = false, onToggle,
 
             <h3>{title}</h3>
 
-            <p>
-                {open ? fullText : shortText}
-            </p>
+            <p>{shortText}</p>
 
-            <button type="button" onClick={onToggle} aria-label={open ? "Read less" : "Read more"}>
-                {open ? (
-                    <>
-                        Read less <ChevronUp size={16} />
-                    </>
-                ) : (
-                    <>
-                        Read more <ArrowRight size={16} />
-                    </>
-                )}
-            </button>
+            <Link
+                to={`/services/${id}`}
+                className="read-more-btn"
+                aria-label={`Read more about ${title}`}
+            >
+                Read more <ArrowRight size={16} />
+            </Link>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 .footer {
-    background: #0a192f;
+    background: #1e3a8a;
     padding: 6rem 0 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -29,6 +29,10 @@
     font-size: 0.9rem;
     color: #ffffff;
     font-weight: 600;
+}
+
+.footer-brand .logo .brand-name {
+    color: #ffffff;
 }
 
 .footer-desc {

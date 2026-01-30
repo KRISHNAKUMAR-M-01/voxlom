@@ -52,7 +52,7 @@ const Crystal = ({ position, size, rotationSpeed }) => {
         <mesh ref={meshRef} position={position}>
             <octahedronGeometry args={[size, 0]} />
             <meshStandardMaterial
-                color="#0a192f"
+                color="#1D4F91"
                 transparent
                 opacity={0.12}
                 metalness={0.9}
@@ -104,7 +104,7 @@ const LineMesh = ({ curve, index }) => {
     return (
         <mesh ref={meshRef}>
             <tubeGeometry args={[curve, 64, 0.005, 8, false]} />
-            <meshBasicMaterial color="#0a192f" transparent opacity={0.08} />
+            <meshBasicMaterial color="#1D4F91" transparent opacity={0.08} />
         </mesh>
     );
 };
@@ -123,7 +123,7 @@ const Scene = () => {
         <>
             <ambientLight intensity={1.5} />
             <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-            <pointLight position={[-10, 5, -10]} intensity={0.5} color="#3b82f6" />
+            <pointLight position={[-10, 5, -10]} intensity={0.5} color="#1D4F91" />
 
             <ParticleField count={50} />
             <AbstractLines />
@@ -134,7 +134,7 @@ const Scene = () => {
                 size={2}
                 speed={0.2}
                 opacity={0.1}
-                color="#0a192f"
+                color="#1D4F91"
             />
 
             <fog attach="fog" args={['#ffffff', 5, 25]} />

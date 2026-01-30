@@ -10,7 +10,7 @@ const NotFound = () => {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Page Not Found - 404 Error | Voxlom Innovative Solution",
-        "description": "The page you are looking for could not be found. Return to Voxlom's homepage to explore our technology solutions and services.",
+        "description": "The page you are looking for could not be found. Return to Voxlom's homepage to explore our technology solution and services.",
         "url": "https://voxlom.com/404",
         "mainEntity": {
             "@type": "Organization",
@@ -24,7 +24,7 @@ const NotFound = () => {
             <Helmet>
                 <title>Page Not Found - 404 Error | Voxlom Innovative Solution</title>
                 <meta name="description" content="The page you are looking for could not be found. Return to Voxlom's homepage to explore our AI/ML, cloud, and software development services." />
-                <meta name="keywords" content="404 error, page not found, voxlom, technology solutions, AI services, cloud engineering" />
+                <meta name="keywords" content="404 error, page not found, voxlom, technology solution, AI services, cloud engineering" />
                 <meta name="robots" content="noindex, follow" />
                 <link rel="canonical" href="https://voxlom.com/404" />
 
@@ -122,3 +122,4 @@ const NotFound = () => {
 };
 
 export default NotFound;
+

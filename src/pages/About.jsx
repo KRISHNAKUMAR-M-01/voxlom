@@ -6,9 +6,10 @@ import aboutVideo from '../assets/abut video.mp4';
 import ceoImage from '../assets/ceo1.jpeg';
 import aboutBg from '../assets/about bg.jpg';
 import whoImage from '../assets/who.avif';
+import p3Image from '../assets/services/p3.avif';
 import './About.css';
 
-const StatItem = ({ target, label }) => {
+const StatItem = ({ target, topLabel, bottomLabel }) => {
     const [count, setCount] = useState(0);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -35,8 +36,11 @@ const StatItem = ({ target, label }) => {
 
     return (
         <div className="stat-item" ref={ref}>
-            <div className="stat-number">{count}{typeof target === 'string' && target.includes('+') ? '+' : ''}</div>
-            <div className="stat-label">{label}</div>
+            <div className="stat-top-label">{topLabel}</div>
+            <div className="stat-number">
+                {count}{typeof target === 'string' && target.includes('+') ? '+' : ''}
+            </div>
+            <div className="stat-bottom-label">{bottomLabel}</div>
         </div>
     );
 };
@@ -46,13 +50,13 @@ export default function About() {
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About Voxlom Innovative Solution",
-        "description": "Learn about Voxlom's mission, vision, and values. We are a technology-driven company focused on delivering innovative digital solutions.",
+        "description": "Learn about Voxlom's mission, vision, and values. We are a technology-driven company focused on delivering innovative digital solution.",
         "url": "https://voxlom.com/about",
         "mainEntity": {
             "@type": "Organization",
             "name": "Voxlom Innovative Solution",
             "foundingDate": "2016",
-            "description": "Technology-driven company focused on delivering modern digital experiences and scalable software solutions."
+            "description": "Technology-driven company focused on delivering modern digital experiences and scalable software solution."
         }
     };
 
@@ -61,7 +65,7 @@ export default function About() {
             <Helmet>
                 <title>About Us - Voxlom Innovative Solution | Our Mission & Vision</title>
                 <meta name="description" content="Discover Voxlom's mission and vision. Our team blends creativity with engineering to help businesses succeed in the digital era." />
-                <meta name="keywords" content="about voxlom, technology company, digital transformation, software solutions, innovation, mission, vision, values" />
+                <meta name="keywords" content="about voxlom, technology company, digital transformation, software solution, innovation, mission, vision, values" />
                 <link rel="canonical" href="https://voxlom.com/about" />
 
                 {/* Open Graph */}
@@ -105,7 +109,7 @@ export default function About() {
                         >
                             <h1 className="section-title">About Voxlom</h1>
                             <p className="hero-subtitle">
-                                Driving innovation through technology, creativity, and smart solutions.
+                                Driving innovation through technology, creativity, and smart solution.
                             </p>
                         </motion.div>
                     </div>
@@ -127,7 +131,7 @@ export default function About() {
                                 <h2 className="section-title-alt">Who We Are</h2>
                                 <p className="about-p">
                                     Voxlom Innovative Solution is a technology-driven company focused on
-                                    delivering modern digital experiences, scalable software solutions,
+                                    delivering modern digital experiences, scalable software solution,
                                     and cutting-edge innovation.
                                 </p>
                                 <p className="about-p">
@@ -166,7 +170,7 @@ export default function About() {
                             viewport={{ once: true }}
                         >
                             <h3>Our Mission</h3>
-                            <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We are committed to designing and delivering sustainable, future-ready solutions that address real-world challenges and create lasting impact. By embracing integrity, excellence, and empathy, we ensure every solution is purposeful, reliable, and scalable. We continuously adopt emerging technologies and best practices to deliver measurable value to our clients and stakeholders. Through collaboration and responsible innovation, we strive to contribute positively to society and build a smarter, more inclusive digital future.</p>
+                            <p>At Voxlom Innovative Solution, our mission is to leverage the power of technology to drive innovation, empower individuals, and transform communities. We are committed to designing and delivering sustainable, future-ready solution that address real-world challenges and create lasting impact. By embracing integrity, excellence, and empathy, we ensure every solution is purposeful, reliable, and scalable. We continuously adopt emerging technologies and best practices to deliver measurable value to our clients and stakeholders. Through collaboration and responsible innovation, we strive to contribute positively to society and build a smarter, more inclusive digital future.</p>
                         </motion.div>
 
                         <motion.div
@@ -178,7 +182,7 @@ export default function About() {
                             transition={{ delay: 0.1 }}
                         >
                             <h3>Our Vision</h3>
-                            <p>At Voxlom Innovative Solution, our vision is to be a trusted global leader in technology-driven innovation that creates meaningful and sustainable impact. We aspire to build intelligent solutions that simplify complexity, enable growth, and enhance lives. By fostering creativity, collaboration, and continuous learning, we aim to stay at the forefront of technological advancement. We envision a future where technology bridges gaps, empowers communities, and drives inclusive progress. Through responsible innovation, we strive to shape a smarter, more connected, and better world.</p>
+                            <p>At Voxlom Innovative Solution, our vision is to be a trusted global leader in technology-driven innovation that creates meaningful and sustainable impact. We aspire to build intelligent solution that simplify complexity, enable growth, and enhance lives. By fostering creativity, collaboration, and continuous learning, we aim to stay at the forefront of technological advancement. We envision a future where technology bridges gaps, empowers communities, and drives inclusive progress. Through responsible innovation, we strive to shape a smarter, more connected, and better world.</p>
                         </motion.div>
 
                         <motion.div
@@ -201,11 +205,15 @@ export default function About() {
                 </section>
 
                 {/* STATS */}
-                <section className="about-section">
+                <section
+                    className="about-section stats-section-bg"
+                    style={{ backgroundImage: `url(${p3Image})` }}
+                >
+                    <div className="stats-overlay"></div>
                     <div className="container stats-grid">
-                        <StatItem target="160+" label="Projects Delivered" />
-                        <StatItem target="50+" label="Happy Clients" />
-                        <StatItem target="8+" label="Years Experience" />
+                        <StatItem target="160+" topLabel="DELIVERED" bottomLabel="PROJECTS" />
+                        <StatItem target="50+" topLabel="TRUSTED BY" bottomLabel="CLIENTS" />
+                        <StatItem target="8+" topLabel="OVER" bottomLabel="YEARS EXPERIENCE" />
                     </div>
                 </section>
 
@@ -230,12 +238,12 @@ export default function About() {
                                     “At Voxlom, our vision is to empower businesses through intelligent
                                     technology and innovative thinking. We believe technology should
                                     create opportunities, not complexity. Our team is dedicated to
-                                    delivering scalable, reliable, and future-ready solutions that help
+                                    delivering scalable, reliable, and future-ready solution that help
                                     organizations grow with confidence.”
                                 </p>
 
                                 <span className="ceo-name">
-                                    — Mrs.SUGANTHI KAMARAJ, CEO, Voxlom Innovative Solutions
+                                    — Mrs.SUGANTHI KAMARAJ, CEO, Voxlom Innovative Solution
                                 </span>
                             </div>
 
@@ -263,3 +271,5 @@ export default function About() {
         </>
     );
 }
+
+

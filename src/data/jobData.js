@@ -6,7 +6,7 @@ export const jobs = [
         description:
             "We are looking for skilled Software Developers to design, develop, and maintain high-quality applications that meet business needs.",
         responsibilities: [
-            "Design, develop, and deploy scalable software solutions",
+            "Design, develop, and deploy scalable software solution",
             "Write clean, maintainable, and efficient code",
             "Collaborate with cross-functional teams",
             "Debug and optimize application performance",
@@ -173,3 +173,4 @@ export const jobs = [
         ],
     },
 ];
+
