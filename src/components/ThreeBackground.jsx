@@ -1,8 +1,26 @@
 
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, Tetrahedron, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
+
+/**
+ * Camera Rig for Parallax Effect
+ * Moves the camera based on mouse position
+ */
+const Rig = () => {
+    const { camera, pointer } = useThree();
+    const vec = new THREE.Vector3();
+
+    useFrame(() => {
+        // Interpolate camera position based on mouse pointer
+        // Smoothly follow the mouse
+        vec.set(pointer.x * 2, pointer.y * 2, camera.position.z);
+        camera.position.lerp(vec, 0.05);
+        camera.lookAt(0, 0, 0);
+    });
+    return null;
+};
 
 const Blob = ({ position, color, speed = 1, distort = 0.4, scale = 1 }) => {
     return (
@@ -29,9 +47,14 @@ const WireframePyramid = ({ position, rotation, scale, color, speed = 1 }) => {
     useFrame((state) => {
         const t = state.clock.getElapsedTime();
         if (ref.current) {
-            ref.current.rotation.x = Math.sin(t * 0.2 * speed + position[0]) * 0.3;
-            ref.current.rotation.y += 0.005 * speed;
-            ref.current.rotation.z = Math.cos(t * 0.15 * speed + position[1]) * 0.2;
+            // Standard rotation
+            // Make rotation slightly responsive to mouse position for extra "life"
+            const mouseX = state.pointer.x * 0.5;
+            const mouseY = state.pointer.y * 0.5;
+
+            ref.current.rotation.x = Math.sin(t * 0.2 * speed + position[0] + mouseY) * 0.3;
+            ref.current.rotation.y += 0.005 * speed + (mouseX * 0.02); // Spin faster/slower with mouse
+            ref.current.rotation.z = Math.cos(t * 0.15 * speed + position[1] + mouseX) * 0.2;
         }
     });
 
@@ -60,6 +83,9 @@ const ThreeBackground = () => {
     return (
         <div className="three-background" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
             <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+                {/* Add the Rig for interactivity */}
+                <Rig />
+
                 <ambientLight intensity={1.2} />
                 <directionalLight position={[10, 10, 5]} intensity={0.8} />
                 <pointLight position={[-10, -10, -10]} intensity={0.5} color="#1D4F91" />
